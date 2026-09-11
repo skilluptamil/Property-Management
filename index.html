@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PropVantage is a premier property management and rental service platform helping landlords, real estate owners, and property companies streamline rentals, tenant screening, rent collection, and maintenance.">
+  <meta name="keywords" content="property management, rental service, tenant screening, rent collection, landlord portal, real estate maintenance">
+  <meta name="author" content="PropVantage">
+  <title>PropVantage - Premium Property Management & Rental Solutions</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP UTILITY BAR / NAVBAR
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a class="navbar-brand-logo" href="index.html">
+        <div class="logo-icon">
+          <i class="fa-solid fa-building-user"></i>
+        </div>
+        <div class="brand-text">Prop<span>Vantage</span></div>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars fs-3 text-primary-custom"></i>
+      </button>
+
+      <!-- Offcanvas Mobile & Desktop Menu -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+          <div class="navbar-brand-logo" id="navbarOffcanvasLabel">
+            <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div class="brand-text">Prop<span>Vantage</span></div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <!-- Home Dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Home
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="pricing.html">Pricing</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">Blog</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+
+          <!-- Action & Switcher Controls -->
+          <div class="nav-actions-wrap">
+            <div class="nav-util-row d-flex align-items-center gap-2">
+              <!-- RTL / LTR Toggle -->
+              <button class="nav-util-btn rtl-toggle-btn" title="Toggle RTL / LTR layout" aria-label="Toggle RTL layout">
+                <span class="rtl-label small">RTL</span>
+              </button>
+
+              <!-- Dark / Light Mode Toggle -->
+              <button class="nav-util-btn theme-toggle-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
+
+            <!-- Login -->
+            <a href="login.html" class="btn btn-outline-custom">
+              <i class="fa-regular fa-user"></i> Login
+            </a>
+
+            <!-- Sign Up CTA -->
+            <a href="register.html" class="btn btn-primary-custom">
+              Sign Up <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       HERO SECTION (HOME 1)
+       ======================================================================== -->
+  <section class="hero-home-1 position-relative">
+    <div class="soft-glow-blob" style="top: -50px; left: -100px;"></div>
+    <div class="soft-glow-blob" style="bottom: 0; right: -50px; background: radial-gradient(circle, rgba(214, 168, 79, 0.08) 0%, transparent 70%);"></div>
+
+    <div class="container position-relative">
+      <div class="row align-items-center g-5">
+        <!-- Hero Text -->
+        <div class="col-lg-6">
+          <div class="badge-subheading">
+            <i class="fa-solid fa-award"></i> #1 Trusted Property Management
+          </div>
+          <h1 class="display-4 fw-bold mb-3">
+            Manage Your Properties. <br><span class="text-primary-custom">Simplify Your Rentals.</span>
+          </h1>
+          <p class="lead mb-4">
+            From tenant management and rent collection to maintenance and lease renewals, we make property management simple, transparent, and stress-free.
+          </p>
+          
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a href="register.html" class="btn btn-primary-custom btn-lg">
+              Get Started <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
+            <a href="services.html" class="btn btn-secondary-custom btn-lg">
+              <i class="fa-solid fa-list-check me-2"></i> Explore Services
+            </a>
+          </div>
+
+          <!-- Quick Trust Badges -->
+          <div class="d-flex align-items-center gap-4 pt-3 border-top border-light-custom">
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-shield-halved text-primary-custom fs-5"></i>
+              <span class="small fw-semibold text-secondary-custom">100% Guaranteed Rent</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-star text-gold fs-5"></i>
+              <span class="small fw-semibold text-secondary-custom">4.9/5 Owner Rating</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-bolt text-primary-custom fs-5"></i>
+              <span class="small fw-semibold text-secondary-custom">24/7 Dispatch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Media & Floating Cards -->
+        <div class="col-lg-6">
+          <div class="position-relative">
+            <div class="hero-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80" alt="Modern Luxury Residential Building Managed by PropVantage">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       TRUSTED BY PROPERTY OWNERS
+       ======================================================================== -->
+  <section class="trusted-by-section">
+    <div class="container">
+      <div class="row align-items-center g-4 text-center">
+        <div class="col-12 col-md-3 text-md-start">
+          <p class="small fw-bold text-uppercase text-secondary-custom mb-0">Trusted by 500+ Landlords & Portfolios</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="trust-logo-item"><i class="fa-solid fa-city me-1"></i> ApexHoldings</div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="trust-logo-item"><i class="fa-solid fa-hotel me-1"></i> MetroEstates</div>
+        </div>
+        <div class="col-6 col-md-2">
+          <div class="trust-logo-item"><i class="fa-solid fa-building-columns me-1"></i> UrbanCapital</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="trust-logo-item"><i class="fa-solid fa-house-chimney-window me-1"></i> SummitLiving</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       STATISTICS COUNTER SECTION
+       ======================================================================== -->
+  <section class="section-py bg-section position-relative">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Stat 1 -->
+        <div class="col-6 col-lg-3">
+          <div class="stat-counter-card">
+            <div class="stat-icon"><i class="fa-solid fa-building"></i></div>
+            <div class="stat-number" data-target="520" data-suffix="+">0</div>
+            <p class="stat-label">Properties Managed</p>
+          </div>
+        </div>
+        <!-- Stat 2 -->
+        <div class="col-6 col-lg-3">
+          <div class="stat-counter-card">
+            <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+            <div class="stat-number" data-target="98" data-suffix="%">0</div>
+            <p class="stat-label">Owner Satisfaction</p>
+          </div>
+        </div>
+        <!-- Stat 3 -->
+        <div class="col-6 col-lg-3">
+          <div class="stat-counter-card">
+            <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="stat-number" data-target="12" data-suffix="+ Years">0</div>
+            <p class="stat-label">Industry Experience</p>
+          </div>
+        </div>
+        <!-- Stat 4 -->
+        <div class="col-6 col-lg-3">
+          <div class="stat-counter-card">
+            <div class="stat-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+            <div class="stat-number" data-target="180" data-prefix="$" data-suffix="M+">0</div>
+            <p class="stat-label">Assets Under Management</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       OUR SERVICES SECTION (8 CORE SERVICES)
+       ======================================================================== -->
+  <section class="section-py bg-main">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-7">
+          <div class="badge-subheading"><i class="fa-solid fa-gear"></i> What We Do</div>
+          <h2 class="display-6 fw-bold">Comprehensive Property Management Services</h2>
+          <p class="lead">Everything you need to maximize your rental income, protect your real estate investments, and keep tenants happy.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Service 1 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-service-key="tenant-screening">
+            <div class="service-icon-box"><i class="fa-solid fa-user-shield"></i></div>
+            <h3 class="service-title"><a href="service-details.html?service=tenant-screening" class="text-dark-custom">Tenant Screening</a></h3>
+            <p class="service-desc">Rigorous multi-point background checks, credit scoring, eviction history, and employment verification.</p>
+            <a href="service-details.html?service=tenant-screening" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-service-key="rent-collection">
+            <div class="service-icon-box"><i class="fa-solid fa-money-bill-transfer"></i></div>
+            <h3 class="service-title"><a href="service-details.html?service=rent-collection" class="text-dark-custom">Rent Collection</a></h3>
+            <p class="service-desc">Automated online tenant payments, guaranteed direct deposits, and instant late-fee enforcement.</p>
+            <a href="service-details.html?service=rent-collection" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-service-key="property-maintenance">
+            <div class="service-icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3 class="service-title"><a href="service-details.html?service=property-maintenance" class="text-dark-custom">Property Maintenance</a></h3>
+            <p class="service-desc">24/7 rapid emergency repair coordination with vetted, licensed, and insured local contractors.</p>
+            <a href="service-details.html?service=property-maintenance" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-service-key="lease-management">
+            <div class="service-icon-box"><i class="fa-solid fa-file-contract"></i></div>
+            <h3 class="service-title"><a href="service-details.html?service=lease-management" class="text-dark-custom">Lease Management</a></h3>
+            <p class="service-desc">Legally compliant custom lease agreements, digital e-signatures, and structured policy handbooks.</p>
+            <a href="service-details.html?service=lease-management" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-service-key="legal-compliance">
+            <div class="service-icon-box"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h3 class="service-title"><a href="service-details.html?service=legal-compliance" class="text-dark-custom">Legal Compliance</a></h3>
+            <p class="service-desc">Full compliance with state fair housing regulations, safety inspections, and local tenant laws.</p>
+            <a href="service-details.html?service=legal-compliance" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-service-key="property-marketing">
+            <div class="service-icon-box"><i class="fa-solid fa-bullhorn"></i></div>
+            <h3 class="service-title"><a href="service-details.html?service=property-marketing" class="text-dark-custom">Property Marketing</a></h3>
+            <p class="service-desc">High-definition photography, virtual tours, and syndicated listings across 40+ premier rental portals.</p>
+            <a href="service-details.html?service=property-marketing" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 7 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-service-key="financial-reporting">
+            <div class="service-icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+            <h3 class="service-title"><a href="service-details.html?service=financial-reporting" class="text-dark-custom">Financial Reporting</a></h3>
+            <p class="service-desc">Monthly itemized cash flow statements, tax-ready annual packages, and transparent owner portal metrics.</p>
+            <a href="service-details.html?service=financial-reporting" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <!-- Service 8 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="service-card" data-service-key="tenant-support">
+            <div class="service-icon-box"><i class="fa-solid fa-headset"></i></div>
+            <h3 class="service-title"><a href="service-details.html?service=tenant-support" class="text-dark-custom">Tenant Support</a></h3>
+            <p class="service-desc">Dedicated bilingual tenant communication desk ensuring timely dispute resolution and high retention.</p>
+            <a href="service-details.html?service=tenant-support" class="service-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       HOW IT WORKS (3-STEP ROADMAP)
+       ======================================================================== -->
+  <section class="section-py bg-section">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-7">
+          <div class="badge-subheading"><i class="fa-solid fa-route"></i> Simple Process</div>
+          <h2 class="display-6 fw-bold">How PropVantage Works</h2>
+          <p class="lead">We take your rental from initial onboarding to automated hands-off cashflow in three simple stages.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-md-4">
+          <div class="custom-card step-item h-100">
+            <div class="step-number-badge">01</div>
+            <h4>Property Onboarding & Setup</h4>
+            <p class="text-secondary-custom">We conduct an in-depth rental value analysis, perform a pre-leasing inspection, and configure your property in our management system.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-md-4">
+          <div class="custom-card step-item h-100">
+            <div class="step-number-badge">02</div>
+            <h4>Tenant Screening & Placement</h4>
+            <p class="text-secondary-custom">We market your listing, organize showings, execute rigorous tenant verification, and finalize ironclad digital lease agreements.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-md-4">
+          <div class="custom-card step-item h-100">
+            <div class="step-number-badge">03</div>
+            <h4>Hands-Off Management & Payouts</h4>
+            <p class="text-secondary-custom">Enjoy prompt monthly rental payouts directly to your bank, 24/7 maintenance management, and real-time dashboard analytics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FEATURED PROPERTIES SHOWCASE
+       ======================================================================== -->
+  <section class="section-py bg-main">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-5 gap-3">
+        <div>
+          <div class="badge-subheading"><i class="fa-solid fa-house-chimney"></i> Portfolio Showcase</div>
+          <h2 class="display-6 fw-bold mb-0">Featured Managed Properties</h2>
+        </div>
+        <a href="dashboard.html" class="btn btn-outline-custom">
+          View Owner Portal <i class="fa-solid fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+
+      <div class="property-grid">
+        <!-- Property 1 -->
+        <div class="property-card">
+          <div class="property-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Grand Horizon Luxury Apartments in Los Angeles">
+            <span class="property-badge-tag tag-success">Fully Leased</span>
+            <span class="property-price-tag">$2,850<small class="fs-6 fw-normal text-secondary-custom">/mo</small></span>
+          </div>
+          <div class="property-card-body">
+            <h3 class="property-title">Grand Horizon Apartments</h3>
+            <div class="property-location"><i class="fa-solid fa-location-dot text-primary-custom"></i> 1420 Sunset Blvd, Los Angeles, CA</div>
+            <div class="property-specs">
+              <span><i class="fa-solid fa-bed"></i> 2 Beds</span>
+              <span><i class="fa-solid fa-bath"></i> 2 Baths</span>
+              <span><i class="fa-solid fa-ruler-combined"></i> 1,180 sqft</span>
+            </div>
+            <div class="property-card-footer">
+              <span class="small fw-semibold text-secondary-custom">Owner Yield: <strong class="text-dark-custom">9.2% ROI</strong></span>
+              <span class="badge badge-status badge-primary">Managed 4 yrs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Property 2 -->
+        <div class="property-card">
+          <div class="property-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Sunset Palms Waterfront Villa in Miami">
+            <span class="property-badge-tag tag-gold">Premium Villa</span>
+            <span class="property-price-tag">$4,200<small class="fs-6 fw-normal text-secondary-custom">/mo</small></span>
+          </div>
+          <div class="property-card-body">
+            <h3 class="property-title">Sunset Palms Waterfront</h3>
+            <div class="property-location"><i class="fa-solid fa-location-dot text-primary-custom"></i> 890 Ocean Drive, Miami, FL</div>
+            <div class="property-specs">
+              <span><i class="fa-solid fa-bed"></i> 4 Beds</span>
+              <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+              <span><i class="fa-solid fa-ruler-combined"></i> 2,650 sqft</span>
+            </div>
+            <div class="property-card-footer">
+              <span class="small fw-semibold text-secondary-custom">Owner Yield: <strong class="text-dark-custom">10.4% ROI</strong></span>
+              <span class="badge badge-status badge-primary">Managed 2 yrs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Property 3 -->
+        <div class="property-card">
+          <div class="property-img-wrap">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Pinecrest Modern Townhomes in Denver">
+            <span class="property-badge-tag tag-success">100% Occupied</span>
+            <span class="property-price-tag">$2,100<small class="fs-6 fw-normal text-secondary-custom">/mo</small></span>
+          </div>
+          <div class="property-card-body">
+            <h3 class="property-title">Pinecrest Heights Townhomes</h3>
+            <div class="property-location"><i class="fa-solid fa-location-dot text-primary-custom"></i> 340 Foothills Way, Denver, CO</div>
+            <div class="property-specs">
+              <span><i class="fa-solid fa-bed"></i> 3 Beds</span>
+              <span><i class="fa-solid fa-bath"></i> 2.5 Baths</span>
+              <span><i class="fa-solid fa-ruler-combined"></i> 1,720 sqft</span>
+            </div>
+            <div class="property-card-footer">
+              <span class="small fw-semibold text-secondary-custom">Owner Yield: <strong class="text-dark-custom">8.7% ROI</strong></span>
+              <span class="badge badge-status badge-primary">Managed 5 yrs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Property 4 -->
+        <div class="property-card">
+          <div class="property-img-wrap">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80" alt="Apex Commercial and Luxury Lofts in Manhattan">
+            <span class="property-badge-tag">New Addition</span>
+            <span class="property-price-tag">$5,600<small class="fs-6 fw-normal text-secondary-custom">/mo</small></span>
+          </div>
+          <div class="property-card-body">
+            <h3 class="property-title">Apex Manhattan Lofts</h3>
+            <div class="property-location"><i class="fa-solid fa-location-dot text-primary-custom"></i> 520 Madison Ave, New York, NY</div>
+            <div class="property-specs">
+              <span><i class="fa-solid fa-bed"></i> 3 Beds</span>
+              <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+              <span><i class="fa-solid fa-ruler-combined"></i> 2,100 sqft</span>
+            </div>
+            <div class="property-card-footer">
+              <span class="small fw-semibold text-secondary-custom">Owner Yield: <strong class="text-dark-custom">11.1% ROI</strong></span>
+              <span class="badge badge-status badge-primary">Managed 1 yr</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       OWNER TESTIMONIALS
+       ======================================================================== -->
+  <section class="section-py bg-section">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-7">
+          <div class="badge-subheading"><i class="fa-solid fa-quote-left"></i> Real Landlord Stories</div>
+          <h2 class="display-6 fw-bold">Trusted by Over 500 Property Owners</h2>
+          <p class="lead">Here is why independent landlords and commercial portfolio managers partner with PropVantage.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Testimonial 1 -->
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="star-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">"Before PropVantage, managing 6 rental properties felt like a full-time nightmare with late rents and repair calls. Now everything is automated, rent arrives like clockwork on the 1st, and their financial portal makes tax season effortless."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Elena Rostova, Landlord" class="testimonial-avatar">
+              <div>
+                <h4 class="author-name">Elena Rostova</h4>
+                <p class="author-role">Owner of 6 Multi-Family Units</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="star-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">"Their tenant screening process is unmatched. In 4 years across our 14 apartments, we have had zero evictions and 98% occupancy. The contractor rates they negotiate for maintenance save us thousands each quarter."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="David Sterling, Portfolio Investor" class="testimonial-avatar">
+              <div>
+                <h4 class="author-name">David Sterling</h4>
+                <p class="author-role">Real Estate Portfolio Investor</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <div class="star-rating">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testimonial-quote">"As an out-of-state landlord, having PropVantage is essential. Their owner portal gives me complete transparency over income, maintenance tickets, and inspection reports with high-res photos."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80" alt="Claire Harrison, Property Owner" class="testimonial-avatar">
+              <div>
+                <h4 class="author-name">Claire Harrison</h4>
+                <p class="author-role">Residential Landlord, Denver</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       PRICING PREVIEW
+       ======================================================================== -->
+  <section class="section-py bg-main">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-4">
+        <div class="col-lg-7">
+          <div class="badge-subheading"><i class="fa-solid fa-tags"></i> Transparent Plans</div>
+          <h2 class="display-6 fw-bold">Simple, Predictable Management Fees</h2>
+          <p class="lead">No hidden charges or setup fees. Choose the management level that matches your portfolio.</p>
+        </div>
+      </div>
+
+      <div class="text-center mb-5">
+        <div class="pricing-switch-wrapper">
+          <span class="fw-semibold text-dark-custom">Monthly</span>
+          <div class="form-check form-switch mb-0">
+            <input class="form-check-input" type="checkbox" id="billingCycleToggle" role="switch">
+          </div>
+          <span class="fw-semibold text-dark-custom">Annual <span class="badge badge-status badge-gold ms-1">Save 20%</span></span>
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <!-- Plan 1 -->
+        <div class="col-lg-4">
+          <div class="pricing-card">
+            <h4>Basic Care</h4>
+            <p class="text-secondary-custom small">Ideal for individual condo or single-family home owners.</p>
+            <div class="price-box">
+              <span class="price-currency">$</span>
+              <span class="price-amount" data-monthly="99" data-annual="79">99</span>
+              <span class="price-period">/ month</span>
+            </div>
+            <ul class="pricing-feature-list">
+              <li><i class="fa-solid fa-check check"></i> Automated Online Rent Collection</li>
+              <li><i class="fa-solid fa-check check"></i> Basic Tenant Screening & Verification</li>
+              <li><i class="fa-solid fa-check check"></i> Monthly Income & Expense Statements</li>
+              <li><i class="fa-solid fa-check check"></i> Digital Owner Portal Access</li>
+              <li><i class="fa-solid fa-xmark cross"></i> 24/7 Dedicated Maintenance Dispatch</li>
+              <li><i class="fa-solid fa-xmark cross"></i> Eviction Protection Guarantee</li>
+            </ul>
+            <a href="register.html" class="btn btn-outline-custom w-100">Get Started</a>
+          </div>
+        </div>
+
+        <!-- Plan 2 (Popular) -->
+        <div class="col-lg-4">
+          <div class="pricing-card featured">
+            <div class="popular-badge"><i class="fa-solid fa-fire me-1"></i> Most Popular</div>
+            <h4>Professional</h4>
+            <p class="text-secondary-custom small">Full-service management for active rental properties & duplexes.</p>
+            <div class="price-box">
+              <span class="price-currency">$</span>
+              <span class="price-amount" data-monthly="199" data-annual="159">199</span>
+              <span class="price-period">/ month</span>
+            </div>
+            <ul class="pricing-feature-list">
+              <li><i class="fa-solid fa-check check"></i> Everything in Basic Care</li>
+              <li><i class="fa-solid fa-check check"></i> 24/7 Emergency Maintenance Dispatch</li>
+              <li><i class="fa-solid fa-check check"></i> Comprehensive 5-Point Tenant Screening</li>
+              <li><i class="fa-solid fa-check check"></i> Bi-Annual Property Condition Inspections</li>
+              <li><i class="fa-solid fa-check check"></i> Lease Renewal & Rent Optimization</li>
+              <li><i class="fa-solid fa-xmark cross"></i> Custom Legal Dispute Representation</li>
+            </ul>
+            <a href="register.html" class="btn btn-primary-custom w-100">Choose Professional</a>
+          </div>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="col-lg-4">
+          <div class="pricing-card">
+            <h4>Enterprise Portfolio</h4>
+            <p class="text-secondary-custom small">Tailored for large multi-family buildings and portfolio investors.</p>
+            <div class="price-box">
+              <span class="price-currency">$</span>
+              <span class="price-amount" data-monthly="349" data-annual="279">349</span>
+              <span class="price-period">/ month</span>
+            </div>
+            <ul class="pricing-feature-list">
+              <li><i class="fa-solid fa-check check"></i> Everything in Professional</li>
+              <li><i class="fa-solid fa-check check"></i> Dedicated Senior Property Manager</li>
+              <li><i class="fa-solid fa-check check"></i> Full Eviction Cost Protection</li>
+              <li><i class="fa-solid fa-check check"></i> Quarterly Tax & Financial Audits</li>
+              <li><i class="fa-solid fa-check check"></i> Priority Contractor Rates & Discounts</li>
+              <li><i class="fa-solid fa-check check"></i> Custom API & Accounting Integration</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline-custom w-100">Contact Enterprise</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       LATEST BLOG ARTICLES
+       ======================================================================== -->
+  <section class="section-py bg-section">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-5 gap-3">
+        <div>
+          <div class="badge-subheading"><i class="fa-solid fa-newspaper"></i> Knowledge Hub</div>
+          <h2 class="display-6 fw-bold mb-0">Latest Property Management Insights</h2>
+        </div>
+        <a href="blog.html" class="btn btn-outline-custom">
+          Browse All Articles <i class="fa-solid fa-arrow-right ms-2"></i>
+        </a>
+      </div>
+
+      <div class="row g-4">
+        <!-- Article 1 -->
+        <div class="col-md-4">
+          <article class="blog-card" data-blog-id="increase-rental-income">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=700&q=80" alt="10 Ways to Increase Your Rental Property Income in 2026">
+              <span class="blog-category-badge">Rental Tips</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Oct 12, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=increase-rental-income">10 Ways to Increase Your Rental Property Income in 2026</a></h3>
+              <p class="blog-excerpt">Practical strategies for landlords to add premium amenities, optimize square footage, and improve rental yield.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Marcus Vance" class="blog-author-avatar">
+                  <span>Marcus Vance</span>
+                </div>
+                <a href="blog-details.html?id=increase-rental-income" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="col-md-4">
+          <article class="blog-card" data-blog-id="find-reliable-tenants">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" alt="How to Find and Retain Reliable Long-Term Tenants">
+              <span class="blog-category-badge">Tenant Management</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Oct 08, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=find-reliable-tenants">How to Find and Retain Reliable Long-Term Tenants</a></h3>
+              <p class="blog-excerpt">Discover why proactive tenant vetting and responsive maintenance communication creates multi-year renewals.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Sarah Jenkins" class="blog-author-avatar">
+                  <span>Sarah Jenkins</span>
+                </div>
+                <a href="blog-details.html?id=find-reliable-tenants" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="col-md-4">
+          <article class="blog-card" data-blog-id="reduce-maintenance-costs">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=700&q=80" alt="How to Reduce Property Maintenance Costs Without Sacrificing Quality">
+              <span class="blog-category-badge">Maintenance</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Sep 28, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=reduce-maintenance-costs">How to Reduce Property Maintenance Costs Without Sacrificing Quality</a></h3>
+              <p class="blog-excerpt">Preventative HVAC checklists, plumbing audits, and vendor negotiation tips to keep repairs within budget.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Robert Sterling" class="blog-author-avatar">
+                  <span>Robert Sterling</span>
+                </div>
+                <a href="blog-details.html?id=reduce-maintenance-costs" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FINAL CALL TO ACTION BANNER
+       ======================================================================== -->
+  <section class="section-py bg-main position-relative overflow-hidden">
+    <div class="container">
+      <div class="custom-card p-5 text-center text-lg-start position-relative" style="background: linear-gradient(135deg, var(--light-blue) 0%, var(--card-bg) 100%); border: 2px solid var(--primary);">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <div class="badge-subheading"><i class="fa-solid fa-rocket"></i> Get Started Today</div>
+            <h2 class="display-6 fw-bold mb-3">Ready to Maximize Your Rental Income with Zero Stress?</h2>
+            <p class="lead mb-0">Join 500+ satisfied property owners. Request your free rental valuation and management consultation now.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <div class="d-flex flex-column flex-sm-row justify-content-lg-end gap-3">
+              <a href="contact.html" class="btn btn-primary-custom btn-lg">Free Rental Analysis</a>
+              <a href="dashboard.html" class="btn btn-outline-custom btn-lg">Explore Portal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER (PREMIUM LIGHT)
+       ======================================================================== -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Col 1: Brand Info -->
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand-logo mb-3" href="index.html">
+            <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div class="brand-text">Prop<span>Vantage</span></div>
+          </a>
+          <p class="mb-4">
+            PropVantage delivers high-performance property management solutions. We empower landlords and property owners with technology, transparency, and dependable rental cashflow.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right fs-6"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right fs-6"></i> Services</a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right fs-6"></i> Pricing Plans</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right fs-6"></i> News & Insights</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right fs-6"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Resources & Owner Portal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Owner Portal</h4>
+          <ul class="footer-links">
+            <li><a href="login.html"><i class="fa-solid fa-chevron-right fs-6"></i> Owner Login</a></li>
+            <li><a href="register.html"><i class="fa-solid fa-chevron-right fs-6"></i> Register Property</a></li>
+            <li><a href="dashboard.html"><i class="fa-solid fa-chevron-right fs-6"></i> Live Dashboard</a></li>
+            <li><a href="service-details.html?service=tenant-screening"><i class="fa-solid fa-chevron-right fs-6"></i> Tenant Screening</a></li>
+            <li><a href="coming-soon.html"><i class="fa-solid fa-chevron-right fs-6"></i> Mobile App (Soon)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Details & Newsletter -->
+        <div class="col-lg-4 col-md-6 footer-contact-col">
+          <h4 class="footer-heading">Contact Details</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+18005557767">+1 (800) 555-PROP</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:support@propertymanagement.com">support@propertymanagement.com</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>742 Evergreen Terrace, Suite 400, New York, NY 10001</span>
+            </li>
+            <li>
+              <i class="fa-regular fa-clock"></i>
+              <span>Mon – Fri: 8:00 AM – 6:00 PM EST</span>
+            </li>
+          </ul>
+
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to PropVantage updates!'); this.reset();">
+            <div class="footer-newsletter-group">
+              <input type="email" class="footer-newsletter-input" placeholder="Enter your email" required aria-label="Subscribe email">
+              <button class="footer-newsletter-btn" type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>
+          &copy; 2026 PropVantage Inc. All rights reserved. Premium Property Management & Rental Solutions.
+        </div>
+        <div class="d-flex gap-3">
+          <a href="404.html" class="text-secondary-custom">Privacy Policy</a>
+          <span class="text-secondary-custom">•</span>
+          <a href="404.html" class="text-secondary-custom">Terms of Service</a>
+          <span class="text-secondary-custom">•</span>
+          <a href="404.html" class="text-secondary-custom">Security & Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top-btn" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

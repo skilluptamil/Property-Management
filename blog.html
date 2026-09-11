@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PropVantage Knowledge Hub - Real estate insights, landlord strategies, maintenance guides, rental income optimization, and property management legal tips.">
+  <meta name="keywords" content="property management blog, landlord tips, rental income guide, real estate investment advice, tenant management">
+  <meta name="author" content="PropVantage">
+  <title>Blog & Real Estate Insights - PropVantage</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       NAVBAR
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand-logo" href="index.html">
+        <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+        <div class="brand-text">Prop<span>Vantage</span></div>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars fs-3 text-primary-custom"></i>
+      </button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+          <div class="navbar-brand-logo" id="navbarOffcanvasLabel">
+            <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div class="brand-text">Prop<span>Vantage</span></div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-actions-wrap">
+            <div class="nav-util-row d-flex align-items-center gap-2">
+              <button class="nav-util-btn rtl-toggle-btn" title="Toggle RTL / LTR layout" aria-label="Toggle RTL layout"><span class="rtl-label small">RTL</span></button>
+              <button class="nav-util-btn theme-toggle-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+            </div>
+            <a href="login.html" class="btn btn-outline-custom"><i class="fa-regular fa-user"></i> Login</a>
+            <a href="register.html" class="btn btn-primary-custom">Sign Up <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       BLOG HERO & SEARCH
+       ======================================================================== -->
+  <section class="section-py bg-light-blue position-relative">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="badge-subheading"><i class="fa-solid fa-book-open"></i> Insights & Resources</div>
+          <h1 class="display-4 fw-bold mb-3">Property Management Knowledge Hub</h1>
+          <p class="lead mb-4">Actionable guides, market analysis, legal compliance updates, and strategies for landlords and real estate investors.</p>
+          
+          <!-- Live Search Box -->
+          <div class="mx-auto" style="max-width: 580px;">
+            <div class="input-icon-wrap">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="blogSearchInput" class="form-control form-control-custom form-control-lg shadow-sm" placeholder="Search by topic, keyword, or title...">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FEATURED ARTICLE HERO CARD
+       ======================================================================== -->
+  <section class="section-pt bg-main">
+    <div class="container">
+      <div class="custom-card p-0 overflow-hidden border-primary mb-5 shadow-lg">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-6">
+            <div style="height: 380px;">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="10 Ways to Increase Your Rental Property Income in 2026" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+          <div class="col-lg-6 p-4 p-lg-5">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="badge badge-status badge-gold">Featured Guide</span>
+              <span class="badge badge-status badge-primary">Rental Tips</span>
+            </div>
+            <h2 class="h2 fw-bold mb-3">
+              <a href="blog-details.html?id=increase-rental-income" class="text-dark-custom">10 Ways to Increase Your Rental Property Income in 2026</a>
+            </h2>
+            <p class="text-secondary-custom mb-4">
+              Learn practical, proven strategies for property owners to maximize annual yields, implement value-add amenities, and optimize lease renewals without raising vacancy risks.
+            </p>
+            <div class="d-flex align-items-center justify-content-between pt-3 border-top border-light-custom">
+              <div class="d-flex align-items-center gap-2">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Marcus Vance" class="blog-author-avatar">
+                <span class="small fw-bold">Marcus Vance</span>
+              </div>
+              <a href="blog-details.html?id=increase-rental-income" class="btn btn-primary-custom btn-sm">Read Full Guide <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="d-flex flex-wrap gap-2 justify-content-center mb-5">
+        <button class="btn btn-primary-custom blog-filter-btn active" data-filter="all">All Articles</button>
+        <button class="btn btn-outline-custom blog-filter-btn" data-filter="rental tips">Rental Tips</button>
+        <button class="btn btn-outline-custom blog-filter-btn" data-filter="investment">Investment</button>
+        <button class="btn btn-outline-custom blog-filter-btn" data-filter="tenant management">Tenant Management</button>
+        <button class="btn btn-outline-custom blog-filter-btn" data-filter="maintenance">Maintenance</button>
+        <button class="btn btn-outline-custom blog-filter-btn" data-filter="legal & compliance">Legal & Compliance</button>
+      </div>
+
+      <!-- Zero Results Empty State -->
+      <div id="blogEmptyState" class="text-center py-5" style="display: none;">
+        <div class="fs-1 text-muted mb-3"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h4 class="fw-bold">No articles match your search</h4>
+        <p class="text-secondary-custom">Try using different keywords or selecting "All Articles".</p>
+      </div>
+
+      <!-- 9 REALISTIC ARTICLES GRID (ALL UNIQUE IMAGES & UNIQUE CONTENT) -->
+      <div class="row g-4 mb-5" id="blogGrid">
+        <!-- Article 1 -->
+        <div class="col-md-6 col-lg-4 blog-grid-item" data-category="rental tips" data-blog-id="increase-rental-income">
+          <article class="blog-card" data-blog-id="increase-rental-income">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="10 Ways to Increase Your Rental Property Income in 2026">
+              <span class="blog-category-badge">Rental Tips</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Oct 12, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=increase-rental-income">10 Ways to Increase Your Rental Property Income in 2026</a></h3>
+              <p class="blog-excerpt">Practical strategies for landlords to add premium amenities, optimize square footage, and improve rental yield.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Marcus Vance" class="blog-author-avatar">
+                  <span>Marcus Vance</span>
+                </div>
+                <a href="blog-details.html?id=increase-rental-income" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="col-md-6 col-lg-4 blog-grid-item" data-category="tenant management" data-blog-id="find-reliable-tenants">
+          <article class="blog-card" data-blog-id="find-reliable-tenants">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="How to Find and Retain Reliable Long-Term Tenants">
+              <span class="blog-category-badge">Tenant Management</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Oct 08, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=find-reliable-tenants">How to Find and Retain Reliable Long-Term Tenants</a></h3>
+              <p class="blog-excerpt">Comprehensive applicant screening steps, background verifications, and credit checks that prevent costly evictions.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Sarah Jenkins" class="blog-author-avatar">
+                  <span>Sarah Jenkins</span>
+                </div>
+                <a href="blog-details.html?id=find-reliable-tenants" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="col-md-6 col-lg-4 blog-grid-item" data-category="legal & compliance" data-blog-id="lease-renewals-guide">
+          <article class="blog-card" data-blog-id="lease-renewals-guide">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?auto=format&fit=crop&w=800&q=80" alt="A Landlord's Guide to Lease Renewals and Rent Adjustments">
+              <span class="blog-category-badge">Legal & Compliance</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Oct 01, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=lease-renewals-guide">A Landlord's Guide to Lease Renewals and Rent Adjustments</a></h3>
+              <p class="blog-excerpt">When to notify tenants, how to negotiate fair market adjustments, and drafting compliant extension addendums.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&q=80" alt="Arthur Vance" class="blog-author-avatar">
+                  <span>Arthur Vance</span>
+                </div>
+                <a href="blog-details.html?id=lease-renewals-guide" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 4 -->
+        <div class="col-md-6 col-lg-4 blog-grid-item" data-category="maintenance" data-blog-id="reduce-maintenance-costs">
+          <article class="blog-card" data-blog-id="reduce-maintenance-costs">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="How to Reduce Property Maintenance Costs Without Sacrificing Quality">
+              <span class="blog-category-badge">Maintenance</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Sep 28, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=reduce-maintenance-costs">How to Reduce Property Maintenance Costs Without Sacrificing Quality</a></h3>
+              <p class="blog-excerpt">Preventative maintenance schedules, reliable contractor partnerships, and seasonal checklists that save thousands.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Robert Sterling" class="blog-author-avatar">
+                  <span>Robert Sterling</span>
+                </div>
+                <a href="blog-details.html?id=reduce-maintenance-costs" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 5 -->
+        <div class="col-md-6 col-lg-4 blog-grid-item" data-category="investment" data-blog-id="rental-expenses-tax-deductions">
+          <article class="blog-card" data-blog-id="rental-expenses-tax-deductions">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80" alt="Understanding Rental Property Expenses: What Can You Deduct?">
+              <span class="blog-category-badge">Investment</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Sep 21, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 6 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=rental-expenses-tax-deductions">Understanding Rental Property Expenses: What Can You Deduct?</a></h3>
+              <p class="blog-excerpt">Capital expenditures versus operating costs: what every investor must track for maximum tax deductions.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80" alt="Emily Watson" class="blog-author-avatar">
+                  <span>Emily Watson</span>
+                </div>
+                <a href="blog-details.html?id=rental-expenses-tax-deductions" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 6 -->
+        <div class="col-md-6 col-lg-4 blog-grid-item" data-category="investment" data-blog-id="technology-in-property-management">
+          <article class="blog-card" data-blog-id="technology-in-property-management">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80" alt="How Technology and AI Are Changing Property Management in 2026">
+              <span class="blog-category-badge">Investment</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Sep 15, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=technology-in-property-management">How Technology and AI Are Changing Property Management in 2026</a></h3>
+              <p class="blog-excerpt">From smart keyless locks to AI rent valuation, explore how software is replacing tedious paper tasks.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=100&q=80" alt="Julian Morales" class="blog-author-avatar">
+                  <span>Julian Morales</span>
+                </div>
+                <a href="blog-details.html?id=technology-in-property-management" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 7 -->
+        <div class="col-md-6 col-lg-4 blog-grid-item" data-category="rental tips" data-blog-id="when-to-increase-rent">
+          <article class="blog-card" data-blog-id="when-to-increase-rent">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="When and How Much Should You Increase Your Rental Price?">
+              <span class="blog-category-badge">Rental Tips</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Sep 10, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=when-to-increase-rent">When and How Much Should You Increase Your Rental Price?</a></h3>
+              <p class="blog-excerpt">Assessing local market comparables, inflation indices, and property upgrades without triggering tenant turnover.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&q=80" alt="Arthur Vance" class="blog-author-avatar">
+                  <span>Arthur Vance</span>
+                </div>
+                <a href="blog-details.html?id=when-to-increase-rent" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 8 -->
+        <div class="col-md-6 col-lg-4 blog-grid-item" data-category="maintenance" data-blog-id="seasonal-maintenance-checklist">
+          <article class="blog-card" data-blog-id="seasonal-maintenance-checklist">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Essential Seasonal Property Maintenance Checklist for Landlords">
+              <span class="blog-category-badge">Maintenance</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Sep 02, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 7 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=seasonal-maintenance-checklist">Essential Seasonal Property Maintenance Checklist for Landlords</a></h3>
+              <p class="blog-excerpt">A comprehensive quarterly guide for roof inspections, gutter clearing, smoke alarms, and boiler maintenance.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Robert Sterling" class="blog-author-avatar">
+                  <span>Robert Sterling</span>
+                </div>
+                <a href="blog-details.html?id=seasonal-maintenance-checklist" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Article 9 -->
+        <div class="col-md-6 col-lg-4 blog-grid-item" data-category="tenant management" data-blog-id="tenant-satisfaction-retention">
+          <article class="blog-card" data-blog-id="tenant-satisfaction-retention">
+            <div class="blog-img-wrap">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="How to Improve Tenant Satisfaction and Boost Lease Retention">
+              <span class="blog-category-badge">Tenant Management</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-meta">
+                <span><i class="fa-regular fa-calendar"></i> Aug 28, 2026</span>
+                <span><i class="fa-regular fa-clock"></i> 5 min read</span>
+              </div>
+              <h3 class="blog-title"><a href="blog-details.html?id=tenant-satisfaction-retention">How to Improve Tenant Satisfaction and Boost Lease Retention</a></h3>
+              <p class="blog-excerpt">Fast repair response times, modern online communication, and respectful resident relations that maximize retention.</p>
+              <div class="blog-card-footer">
+                <div class="blog-author-info">
+                  <img src="https://images.unsplash.com/photo-1573497045249-1e3d36630043?auto=format&fit=crop&w=100&q=80" alt="Sophia Lin" class="blog-author-avatar">
+                  <span>Sophia Lin</span>
+                </div>
+                <a href="blog-details.html?id=tenant-satisfaction-retention" class="text-primary-custom fw-bold small">Read More <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       NEWSLETTER SUBSCRIPTION SECTION
+       ======================================================================== -->
+  <section class="section-py bg-section">
+    <div class="container">
+      <div class="custom-card p-5 text-center" style="background: linear-gradient(135deg, var(--light-blue) 0%, var(--card-bg) 100%); border: 2px solid var(--primary);">
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <div class="badge-subheading"><i class="fa-solid fa-envelope-open-text"></i> Weekly Newsletter</div>
+            <h2 class="display-6 fw-bold mb-3">Join 10,000+ Landlords Getting Free Market Updates</h2>
+            <p class="lead mb-4">Subscribe to receive our latest real estate research, legal updates, and rent valuation tools straight to your inbox.</p>
+            
+            <form onsubmit="event.preventDefault(); alert('Thank you for subscribing to PropVantage Insights!'); this.reset();">
+              <div class="input-group input-group-lg mx-auto" style="max-width: 520px;">
+                <input type="email" class="form-control form-control-custom" placeholder="Enter your email address..." required aria-label="Subscribe to newsletter">
+                <button class="btn btn-primary-custom px-4" type="submit">Subscribe</button>
+              </div>
+              <small class="text-secondary-custom d-block mt-2">Zero spam. Unsubscribe at any time.</small>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand-logo mb-3" href="index.html">
+            <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div class="brand-text">Prop<span>Vantage</span></div>
+          </a>
+          <p class="mb-4">Real estate insights, property management advice, and rental solutions for landlords.</p>
+          <div class="d-flex gap-2">
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="X Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right fs-6"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right fs-6"></i> Services</a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right fs-6"></i> Pricing Plans</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right fs-6"></i> News & Insights</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right fs-6"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Resources & Owner Portal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Owner Portal</h4>
+          <ul class="footer-links">
+            <li><a href="login.html"><i class="fa-solid fa-chevron-right fs-6"></i> Owner Login</a></li>
+            <li><a href="register.html"><i class="fa-solid fa-chevron-right fs-6"></i> Register Property</a></li>
+            <li><a href="dashboard.html"><i class="fa-solid fa-chevron-right fs-6"></i> Live Dashboard</a></li>
+            <li><a href="service-details.html?service=tenant-screening"><i class="fa-solid fa-chevron-right fs-6"></i> Tenant Screening</a></li>
+            <li><a href="coming-soon.html"><i class="fa-solid fa-chevron-right fs-6"></i> Mobile App (Soon)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Details & Newsletter -->
+        <div class="col-lg-4 col-md-6 footer-contact-col">
+          <h4 class="footer-heading">Contact Details</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+18005557767">+1 (800) 555-PROP</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:support@propertymanagement.com">support@propertymanagement.com</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>742 Evergreen Terrace, Suite 400, New York, NY 10001</span>
+            </li>
+            <li>
+              <i class="fa-regular fa-clock"></i>
+              <span>Mon – Fri: 8:00 AM – 6:00 PM EST</span>
+            </li>
+          </ul>
+
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to PropVantage updates!'); this.reset();">
+            <div class="footer-newsletter-group">
+              <input type="email" class="footer-newsletter-input" placeholder="Enter your email" required aria-label="Subscribe email">
+              <button class="footer-newsletter-btn" type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>&copy; 2026 PropVantage Inc. All rights reserved.</div>
+        <div class="d-flex gap-3">
+          <a href="404.html" class="text-secondary-custom">Privacy Policy</a>
+          <span class="text-secondary-custom">•</span>
+          <a href="404.html" class="text-secondary-custom">Terms of Service</a>
+          <span class="text-secondary-custom">•</span>
+          <a href="404.html" class="text-secondary-custom">Security & Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top-btn" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="propGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F86A6" />
+      <stop offset="100%" stop-color="#263746" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8F1DF" />
+      <stop offset="100%" stop-color="#D6A84F" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#propGrad)"/>
+  <!-- Modern Building Silhouettes -->
+  <path d="M14 48V26L28 16V48H14Z" fill="#FFFFFF" fill-opacity="0.95"/>
+  <path d="M30 48V20L44 10V48H30Z" fill="#EAF4F8" fill-opacity="0.9"/>
+  <path d="M46 48V28L52 24V48H46Z" fill="#78AFC8" fill-opacity="0.85"/>
+  <!-- Windows -->
+  <rect x="18" y="24" width="4" height="4" rx="1" fill="#4F86A6"/>
+  <rect x="18" y="32" width="4" height="4" rx="1" fill="#4F86A6"/>
+  <rect x="18" y="40" width="4" height="4" rx="1" fill="#4F86A6"/>
+  <rect x="34" y="22" width="5" height="5" rx="1" fill="#263746"/>
+  <rect x="34" y="31" width="5" height="5" rx="1" fill="#263746"/>
+  <rect x="34" y="40" width="5" height="5" rx="1" fill="#263746"/>
+  <!-- Gold Key / Accent Badge -->
+  <circle cx="48" cy="18" r="5" fill="url(#goldGrad)"/>
+  <path d="M48 16V20M46 18H50" stroke="#263746" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

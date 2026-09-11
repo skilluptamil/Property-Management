@@ -1,0 +1,215 @@
+/* ==========================================================================
+   PROPVANTAGE - RTL (RIGHT-TO-LEFT) STYLESHEET
+   ========================================================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* 1. Brand Logo: keep icon and brand name structured cleanly in LTR flow */
+[dir="rtl"] .navbar-brand-logo {
+  direction: ltr;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* 2. Navigation & Actions */
+[dir="rtl"] .navbar-nav {
+  padding-right: 0;
+}
+
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+  left: auto !important;
+  right: 0 !important;
+}
+
+[dir="rtl"] .dropdown-item:hover {
+  padding-left: 1rem;
+  padding-right: 1.25rem;
+}
+
+[dir="rtl"] .nav-actions-wrap {
+  flex-direction: row;
+}
+
+/* 3. Directional Icon Flipping Only (Arrows & Chevrons) */
+[dir="rtl"] .fa-arrow-right,
+[dir="rtl"] .fa-arrow-left,
+[dir="rtl"] .fa-chevron-right,
+[dir="rtl"] .fa-chevron-left,
+[dir="rtl"] .fa-angle-right,
+[dir="rtl"] .fa-angle-left {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .service-card .service-link i {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .service-card:hover .service-link i {
+  transform: scaleX(-1) translateX(-4px);
+}
+
+/* 4. Form Inputs & Input Icon Wrappers in RTL */
+[dir="rtl"] .form-label-custom {
+  text-align: right;
+  display: block;
+}
+
+[dir="rtl"] .input-icon-wrap {
+  position: relative;
+}
+
+[dir="rtl"] .input-icon-wrap i {
+  left: auto !important;
+  right: 1rem !important;
+}
+
+[dir="rtl"] .input-icon-wrap .form-control-custom {
+  padding-left: 1.15rem;
+  padding-right: 2.75rem;
+  text-align: right;
+}
+
+/* Password input with left toggle and right key icon */
+[dir="rtl"] .position-relative .password-toggle-btn {
+  right: auto !important;
+  left: 0.75rem !important;
+}
+
+[dir="rtl"] .position-relative .input-icon-wrap .form-control-custom {
+  padding-right: 2.75rem !important;
+  padding-left: 2.75rem !important;
+}
+
+/* Form Check / Checkboxes */
+[dir="rtl"] .form-check {
+  padding-left: 0;
+  padding-right: 1.75rem;
+  text-align: right;
+}
+
+[dir="rtl"] .form-check .form-check-input {
+  float: right;
+  margin-left: 0;
+  margin-right: -1.75rem;
+}
+
+/* 5. Buttons with Flex Alignment */
+[dir="rtl"] .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+/* 6. Floating Badges & Cards */
+[dir="rtl"] .floating-stat-card.bottom-left {
+  left: auto;
+  right: -20px;
+}
+
+[dir="rtl"] .floating-stat-card.top-right {
+  right: auto;
+  left: -20px;
+}
+
+[dir="rtl"] .property-badge-tag {
+  left: auto;
+  right: 12px;
+}
+
+[dir="rtl"] .property-price-tag {
+  right: auto;
+  left: 12px;
+}
+
+[dir="rtl"] .blog-category-badge {
+  left: auto;
+  right: 15px;
+}
+
+[dir="rtl"] .sidebar-widget-title::after {
+  left: auto;
+  right: 0;
+}
+
+/* 7. Footer Styles */
+[dir="rtl"] .category-list li a:hover {
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+
+[dir="rtl"] .footer-links li a:hover {
+  padding-left: 0;
+  padding-right: 0.35rem;
+}
+
+[dir="rtl"] .footer-contact-col {
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  padding-right: 2.25rem;
+}
+
+@media (max-width: 991.98px) {
+  [dir="rtl"] .footer-contact-col {
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+  }
+}
+
+[dir="rtl"] .footer-newsletter-group {
+  padding: 4px 16px 4px 5px;
+}
+
+[dir="rtl"] .footer-newsletter-input {
+  padding: 0.45rem 0 0.45rem 0.5rem;
+}
+
+[dir="rtl"] .footer-newsletter-btn i {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .back-to-top-btn {
+  right: auto;
+  left: 30px;
+}
+
+/* 8. Timeline in RTL */
+[dir="rtl"] .timeline-item.left {
+  padding-right: 0;
+  padding-left: 3rem;
+  text-align: left;
+}
+
+[dir="rtl"] .timeline-item.right {
+  padding-left: 0;
+  padding-right: 3rem;
+  text-align: right;
+}
+
+[dir="rtl"] .timeline-item.left .timeline-dot {
+  right: auto;
+  left: -10px;
+}
+
+[dir="rtl"] .timeline-item.right .timeline-dot {
+  left: auto;
+  right: -10px;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .timeline-item {
+    padding-left: 0 !important;
+    padding-right: 3rem !important;
+    text-align: right !important;
+  }
+  [dir="rtl"] .timeline-item .timeline-dot {
+    left: auto !important;
+    right: 10px !important;
+  }
+  [dir="rtl"] .history-timeline::before {
+    left: auto;
+    right: 20px;
+  }
+}
