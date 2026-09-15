@@ -213,3 +213,21 @@
     right: 20px;
   }
 }
+
+/* 9. Feature Checklists in RTL */
+[dir="rtl"] .feature-checklist li,
+[dir="rtl"] .custom-card[data-service-key] ul li,
+[dir="rtl"] .service-card ul li,
+[dir="rtl"] .pricing-feature-list li {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .feature-checklist li span,
+[dir="rtl"] .feature-checklist .feature-text,
+[dir="rtl"] .custom-card[data-service-key] ul li span,
+[dir="rtl"] .service-card ul li span,
+[dir="rtl"] .pricing-feature-list li span {
+  text-align: right;
+}
+

@@ -899,7 +899,7 @@ const PROPVANTAGE_BLOGS = {
     categoryBadgeClass: 'badge-primary',
     author: 'Sophia Lin',
     authorRole: 'Head of Property Operations',
-    authorAvatar: 'https://images.unsplash.com/photo-1573497045249-1e3d36630043?auto=format&fit=crop&w=100&q=80',
+    authorAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80',
     date: 'August 28, 2026',
     readTime: '5 min read',
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1100&q=80',

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-bs-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PropVantage Security & Compliance. Learn about our bank-grade 256-bit encryption, SOC 2 Type II compliance, PCI-DSS certification, and escrow protection.">
+  <meta name="keywords" content="security compliance, property management security, SOC 2, PCI-DSS, bank-grade encryption, escrow security, GDPR">
+  <meta name="author" content="PropVantage">
+  <title>Security & Compliance - PropVantage Property Management</title>
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/rtl.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       NAVBAR
+       ======================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand-logo" href="index.html">
+        <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+        <div class="brand-text">Prop<span>Vantage</span></div>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas" aria-controls="navbarOffcanvas" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars fs-3 text-primary-custom"></i>
+      </button>
+
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+          <div class="navbar-brand-logo" id="navbarOffcanvasLabel">
+            <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div class="brand-text">Prop<span>Vantage</span></div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="index.html">Home 1</a></li>
+                <li><a class="dropdown-item" href="home-2.html">Home 2</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          </ul>
+
+          <div class="nav-actions-wrap">
+            <div class="nav-util-row d-flex align-items-center gap-2">
+              <button class="nav-util-btn rtl-toggle-btn" title="Toggle RTL / LTR layout" aria-label="Toggle RTL layout"><span class="rtl-label small">RTL</span></button>
+              <button class="nav-util-btn theme-toggle-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+            </div>
+            <a href="login.html" class="btn btn-outline-custom"><i class="fa-regular fa-user"></i> Login</a>
+            <a href="register.html" class="btn btn-primary-custom">Sign Up <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       HERO HEADER
+       ======================================================================== -->
+  <section class="section-py bg-light-blue position-relative text-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="badge-subheading"><i class="fa-solid fa-lock"></i> Bank-Grade Protection</div>
+          <h1 class="display-4 fw-bold mb-3">Security & Compliance</h1>
+          <p class="lead mb-3">Enterprise-grade infrastructure, strict regulatory adherence, and segregated financial protection designed to safeguard your real estate portfolio.</p>
+          <div class="d-flex justify-content-center gap-3 text-secondary-custom small">
+            <span><i class="fa-solid fa-shield-halved me-1"></i> SOC 2 Type II Certified</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-credit-card me-1"></i> PCI-DSS Level 1</span>
+            <span>•</span>
+            <span><i class="fa-solid fa-vault me-1"></i> FDIC Insured Escrow</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECURITY HIGHLIGHT GRID
+       ======================================================================== -->
+  <section class="section-pt bg-main">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-3">
+          <div class="security-badge-card h-100">
+            <div class="sec-icon"><i class="fa-solid fa-key"></i></div>
+            <h5>256-Bit AES & TLS 1.3</h5>
+            <p>End-to-end cryptographic encryption for all rental documents, leases, and tenant data in transit & at rest.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="security-badge-card h-100">
+            <div class="sec-icon"><i class="fa-solid fa-vault"></i></div>
+            <h5>Segregated Trust Accounts</h5>
+            <p>100% separated escrow accounts ensuring tenant deposits and landlord revenues are never co-mingled.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="security-badge-card h-100">
+            <div class="sec-icon"><i class="fa-solid fa-shield-virus"></i></div>
+            <h5>SOC 2 Type II Audited</h5>
+            <p>Independently audited controls guaranteeing continuous security, availability, and processing integrity.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="security-badge-card h-100">
+            <div class="sec-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h5>Fair Housing Compliant</h5>
+            <p>Full adherence to statutory fair housing guidelines and non-discriminatory AI screening protocols.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MAIN COMPLIANCE CONTENT
+       ======================================================================== -->
+  <section class="section-pb bg-main">
+    <div class="container">
+      <div class="row g-5">
+        
+        <!-- Table of Contents Sidebar -->
+        <div class="col-lg-4">
+          <div class="legal-toc-card">
+            <h5 class="fw-bold mb-3 pb-2 border-bottom"><i class="fa-solid fa-list-check text-primary-custom me-2"></i> Security Sections</h5>
+            <ul class="legal-nav-list">
+              <li class="legal-nav-item"><a href="#cloud-infra" class="legal-nav-link"><i class="fa-solid fa-angle-right"></i> 1. Cloud Infrastructure & Encryption</a></li>
+              <li class="legal-nav-item"><a href="#financial-security" class="legal-nav-link"><i class="fa-solid fa-angle-right"></i> 2. Financial Escrow & Banking</a></li>
+              <li class="legal-nav-item"><a href="#access-auth" class="legal-nav-link"><i class="fa-solid fa-angle-right"></i> 3. Identity & Access (MFA/RBAC)</a></li>
+              <li class="legal-nav-item"><a href="#regulatory-standards" class="legal-nav-link"><i class="fa-solid fa-angle-right"></i> 4. Regulatory Housing & Compliance</a></li>
+              <li class="legal-nav-item"><a href="#threat-monitoring" class="legal-nav-link"><i class="fa-solid fa-angle-right"></i> 5. 24/7 Monitoring & Incident SLA</a></li>
+              <li class="legal-nav-item"><a href="#bug-bounty" class="legal-nav-link"><i class="fa-solid fa-angle-right"></i> 6. Vulnerability Disclosure & Audit</a></li>
+            </ul>
+
+            <hr class="my-4">
+
+            <div class="bg-section p-3 rounded-3 mb-3">
+              <h6 class="fw-bold mb-1"><i class="fa-solid fa-shield-cat text-primary-custom me-1"></i> Security Operations Team</h6>
+              <p class="small text-secondary-custom mb-2">Report a security finding or request SOC 2 audit reports:</p>
+              <a href="mailto:security@propertymanagement.com" class="btn btn-sm btn-outline-custom w-100">Contact Security</a>
+            </div>
+
+            <div class="d-flex gap-2">
+              <a href="privacy-policy.html" class="btn btn-sm btn-outline-secondary w-50">Privacy Policy</a>
+              <a href="terms-of-service.html" class="btn btn-sm btn-outline-secondary w-50">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compliance Body -->
+        <div class="col-lg-8">
+          <article class="custom-card p-4 p-lg-5 shadow-sm">
+
+            <!-- Section 1 -->
+            <div id="cloud-infra" class="legal-section">
+              <h3><i class="fa-solid fa-cloud-arrow-up"></i> 1. Cloud Infrastructure & Data Encryption</h3>
+              <p>PropVantage leverages Tier-4 cloud infrastructure distributed across high-availability data centers with 99.99% uptime SLAs.</p>
+              <ul>
+                <li><strong>Encryption at Rest:</strong> All databases, documents, lease agreements, and file storage use AES-256 encryption managed via hardware security modules (HSM).</li>
+                <li><strong>Encryption in Transit:</strong> All HTTP traffic is enforced over TLS 1.3 with HSTS (HTTP Strict Transport Security) and automated certificate rotation.</li>
+                <li><strong>Continuous Disaster Recovery:</strong> Automated point-in-time recovery snapshots replicated across geographically isolated availability zones.</li>
+              </ul>
+            </div>
+
+            <!-- Section 2 -->
+            <div id="financial-security" class="legal-section">
+              <h3><i class="fa-solid fa-landmark"></i> 2. Financial Escrow & Banking Security</h3>
+              <p>We implement rigid accounting controls to protect owner payouts, tenant rent transactions, and security deposits:</p>
+              <ul>
+                <li><strong>PCI-DSS Level 1 Compliance:</strong> Credit card and debit transactions are processed with strict PCI compliance. Payment tokens never expose sensitive card numbers to backend databases.</li>
+                <li><strong>NACHA Certified ACH Processing:</strong> Direct bank account transfers are validated with instant micro-deposit and open-banking API protocols.</li>
+                <li><strong>Dual-Authorization Payouts:</strong> Large disbursements and vendor invoices undergo automated multi-signature verification prior to fund release.</li>
+              </ul>
+
+              <div class="legal-callout-box">
+                <i class="fa-solid fa-vault"></i>
+                <p><strong>FDIC Insured Trust Accounts:</strong> Every dollar in tenant security deposits is held in dedicated trust accounts with participating member FDIC financial institutions.</p>
+              </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div id="access-auth" class="legal-section">
+              <h3><i class="fa-solid fa-user-shield"></i> 3. Identity Verification & Multi-Factor Access</h3>
+              <p>To eliminate unauthorized access, our platform utilizes modern zero-trust architecture:</p>
+              <ul>
+                <li><strong>Mandatory Multi-Factor Authentication (MFA):</strong> Available via Authenticator apps (TOTP), SMS OTP, and hardware security keys (WebAuthn/FIDO2).</li>
+                <li><strong>Role-Based Access Control (RBAC):</strong> Granular permissions ensuring property managers, maintenance coordinators, and financial auditors access only minimum requisite data.</li>
+                <li><strong>Session Invalidation:</strong> Automatic timeout and instant revocation of compromised active sessions across all devices.</li>
+              </ul>
+            </div>
+
+            <!-- Section 4 -->
+            <div id="regulatory-standards" class="legal-section">
+              <h3><i class="fa-solid fa-file-circle-check"></i> 4. Regulatory Housing & Privacy Compliance</h3>
+              <p>Our operational policies undergo continuous legal review to ensure total compliance across federal and regional statutory bodies:</p>
+              <ul>
+                <li><strong>Federal Fair Housing Act (FHA):</strong> Standardized tenant screening criteria that prevents systemic bias or unlawful housing discrimination.</li>
+                <li><strong>Americans with Disabilities Act (ADA):</strong> Accessible portal interfaces adhering to WCAG 2.1 AA digital accessibility standards.</li>
+                <li><strong>GDPR & CCPA/CPRA:</strong> Full data subject rights implementation including comprehensive data export, privacy controls, and automated retention lifecycle management.</li>
+              </ul>
+            </div>
+
+            <!-- Section 5 -->
+            <div id="threat-monitoring" class="legal-section">
+              <h3><i class="fa-solid fa-radar"></i> 5. 24/7 Threat Monitoring & Incident Response</h3>
+              <p>Our dedicated Security Operations Center (SOC) continuously monitors system events using advanced intrusion detection and behavioral telemetry:</p>
+              <ul>
+                <li><strong>DDoS Mitigation:</strong> Multi-layer DDoS mitigation capable of filtering volumetric attacks in real-time.</li>
+                <li><strong>Web Application Firewall (WAF):</strong> Automated blocking of OWASP Top 10 exploits (SQL Injection, XSS, SSRF).</li>
+                <li><strong>Incident SLA:</strong> Critical severity vulnerabilities or potential compromises trigger immediate containment workflows within 15 minutes of detection.</li>
+              </ul>
+            </div>
+
+            <!-- Section 6 -->
+            <div id="bug-bounty" class="legal-section">
+              <h3><i class="fa-solid fa-bug"></i> 6. Vulnerability Disclosure & Third-Party Audits</h3>
+              <p>We welcome security researchers and ethical hackers to identify and report potential platform vulnerabilities in accordance with our Responsible Disclosure Policy.</p>
+              <div class="bg-section p-4 rounded-3">
+                <h6 class="fw-bold mb-2"><i class="fa-solid fa-envelope-circle-check text-primary-custom me-2"></i> Report a Security Vulnerability</h6>
+                <p class="small text-secondary-custom mb-2">If you have discovered a potential security vulnerability, please email our security team with detailed steps to reproduce:</p>
+                <p class="mb-0 small"><i class="fa-solid fa-envelope text-primary-custom me-2"></i> <strong>Email:</strong> <a href="mailto:security@propertymanagement.com" class="text-primary-custom fw-bold">security@propertymanagement.com</a></p>
+                <p class="mb-0 small text-secondary-custom mt-2">PGP Key ID: <code>4B29 881E F390 11AC 9D5E</code></p>
+              </div>
+            </div>
+
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer bg-dark-custom text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <!-- Col 1: Brand -->
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand-logo mb-3 d-inline-flex" href="index.html">
+            <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div class="brand-text text-white">Prop<span class="text-primary-custom">Vantage</span></div>
+          </a>
+          <p class="text-secondary-custom mb-4">
+            Transforming rental property management with automated workflows, transparent owner payouts, and verified 24/7 tenant placement.
+          </p>
+          <div class="d-flex gap-2">
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="btn-icon-circle" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" class="btn-icon-circle" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="btn-icon-circle" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="btn-icon-circle" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-chevron-right fs-6"></i> Home Page</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-chevron-right fs-6"></i> About Us</a></li>
+            <li><a href="services.html"><i class="fa-solid fa-chevron-right fs-6"></i> All Services</a></li>
+            <li><a href="pricing.html"><i class="fa-solid fa-chevron-right fs-6"></i> Pricing Plans</a></li>
+            <li><a href="blog.html"><i class="fa-solid fa-chevron-right fs-6"></i> Real Estate Blog</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-chevron-right fs-6"></i> Contact Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Resources & Owner Portal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Owner Portal</h4>
+          <ul class="footer-links">
+            <li><a href="login.html"><i class="fa-solid fa-chevron-right fs-6"></i> Owner Login</a></li>
+            <li><a href="register.html"><i class="fa-solid fa-chevron-right fs-6"></i> Register Property</a></li>
+            <li><a href="dashboard.html"><i class="fa-solid fa-chevron-right fs-6"></i> Live Dashboard</a></li>
+            <li><a href="service-details.html?service=tenant-screening"><i class="fa-solid fa-chevron-right fs-6"></i> Tenant Screening</a></li>
+            <li><a href="coming-soon.html"><i class="fa-solid fa-chevron-right fs-6"></i> Mobile App (Soon)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Details & Newsletter -->
+        <div class="col-lg-4 col-md-6 footer-contact-col">
+          <h4 class="footer-heading">Contact Details</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+18005557767">+1 (800) 555-PROP</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:support@propertymanagement.com">support@propertymanagement.com</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>742 Evergreen Terrace, Suite 400, New York, NY 10001</span>
+            </li>
+            <li>
+              <i class="fa-regular fa-clock"></i>
+              <span>Mon – Fri: 8:00 AM – 6:00 PM EST</span>
+            </li>
+          </ul>
+
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to PropVantage updates!'); this.reset();">
+            <div class="footer-newsletter-group">
+              <input type="email" class="footer-newsletter-input" placeholder="Enter your email" required aria-label="Subscribe email">
+              <button class="footer-newsletter-btn" type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <div>
+          &copy; 2026 PropVantage Inc. All rights reserved. Premium Property Management & Rental Solutions.
+        </div>
+        <div class="d-flex gap-3">
+          <a href="privacy-policy.html" class="text-secondary-custom">Privacy Policy</a>
+          <span class="text-secondary-custom">•</span>
+          <a href="terms-of-service.html" class="text-secondary-custom">Terms of Service</a>
+          <span class="text-secondary-custom">•</span>
+          <a href="security-compliance.html" class="text-secondary-custom">Security & Compliance</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top-btn" aria-label="Back to Top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

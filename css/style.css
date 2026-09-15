@@ -448,6 +448,27 @@ select {
   overflow: hidden;
 }
 
+.custom-card.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.custom-card.text-center h4,
+.custom-card.text-center h5 {
+  width: 100%;
+  min-height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.custom-card.text-center p {
+  flex-grow: 1;
+}
+
 .custom-card:hover {
   border-color: rgba(var(--primary-rgb), 0.4);
   box-shadow: var(--shadow-lg);
@@ -940,21 +961,30 @@ select {
   box-shadow: var(--shadow-xl);
 }
 
-.service-card .service-icon-box {
-  width: 64px;
-  height: 64px;
+.service-icon-box {
+  width: 58px;
+  height: 58px;
   border-radius: var(--radius-md);
   background-color: var(--light-blue);
   color: var(--primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.65rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
   transition: var(--transition-normal);
+  flex-shrink: 0;
 }
 
-.service-card:hover .service-icon-box {
+.service-card .service-icon-box {
+  width: 64px;
+  height: 64px;
+  font-size: 1.65rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card:hover .service-icon-box,
+.custom-card:hover .service-icon-box {
   background-color: var(--primary);
   color: #ffffff;
   transform: scale(1.08);
@@ -964,6 +994,9 @@ select {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 0.85rem;
+  min-height: 2.6rem;
+  display: flex;
+  align-items: center;
 }
 
 .service-card .service-desc {
@@ -974,7 +1007,7 @@ select {
   margin-bottom: 1.5rem;
 }
 
-.service-card .service-link {
+.service-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -982,14 +1015,110 @@ select {
   font-size: 0.9rem;
   color: var(--primary);
   margin-top: auto;
+  text-decoration: none;
+  transition: var(--transition-fast);
 }
 
-.service-card .service-link i {
+.service-link i {
   transition: transform 0.2s ease;
 }
 
-.service-card:hover .service-link i {
+.service-card:hover .service-link i,
+.custom-card:hover .service-link i {
   transform: translateX(4px);
+}
+
+/* Smart Property Infrastructure Grid Cards (Home 2) & Service Cards */
+.custom-card[data-service-key],
+.tech-pillar-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2.2rem;
+}
+
+.custom-card[data-service-key] h4,
+.tech-pillar-card h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+  min-height: 2.8rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.custom-card[data-service-key] p,
+.tech-pillar-card p {
+  font-size: 0.94rem;
+  color: var(--secondary-text);
+  line-height: 1.6;
+  min-height: 4.8rem;
+  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Feature & Checkmark List Alignment */
+.feature-checklist,
+.custom-card[data-service-key] ul,
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex-grow: 1;
+  justify-content: flex-start;
+}
+
+.feature-checklist li,
+.custom-card[data-service-key] ul li,
+.service-card ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--secondary-text);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: start;
+}
+
+.feature-checklist li i,
+.custom-card[data-service-key] ul li i,
+.service-card ul li i,
+.feature-checklist .check-icon {
+  flex-shrink: 0;
+  width: 1.15rem;
+  min-width: 1.15rem;
+  height: 1.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--success);
+  margin: 0 !important;
+  font-size: 0.9rem;
+}
+
+.feature-checklist li span,
+.feature-checklist .feature-text,
+.custom-card[data-service-key] ul li span,
+.service-card ul li span {
+  flex: 1 1 auto;
+  min-width: 0;
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  text-align: start;
+}
+
+.custom-card[data-service-key] .service-link,
+.tech-pillar-card .service-link {
+  margin-top: auto;
+  flex-shrink: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -998,12 +1127,17 @@ select {
 .step-item {
   position: relative;
   text-align: center;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 .step-number-badge {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--primary) 0%, #263746 100%);
   color: #ffffff;
@@ -1016,16 +1150,35 @@ select {
   box-shadow: var(--shadow-primary);
   position: relative;
   z-index: 2;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-item:hover .step-number-badge {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .step-item h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+  min-height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  line-height: 1.35;
 }
 
 .step-item p {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
+  color: var(--secondary-text);
+  line-height: 1.65;
   margin-bottom: 0;
+  text-align: center;
+  flex-grow: 1;
 }
 
 /* --------------------------------------------------------------------------
@@ -1327,6 +1480,20 @@ select {
   box-shadow: var(--shadow-gold);
 }
 
+.pricing-card h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  min-height: 2.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-card > p {
+  min-height: 2.75rem;
+  margin-bottom: 0.5rem;
+}
+
 .price-box {
   margin: 1.5rem 0 2rem 0;
 }
@@ -1361,11 +1528,24 @@ select {
 .pricing-feature-list li {
   padding: 0.65rem 0;
   font-size: 0.92rem;
+  line-height: 1.5;
   color: var(--main-text);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   border-bottom: 1px solid var(--border-light);
+  text-align: start;
+}
+
+.pricing-feature-list li i.check,
+.pricing-feature-list li i.cross {
+  flex-shrink: 0;
+  width: 1.25rem;
+  min-width: 1.25rem;
+  height: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pricing-feature-list li i.check {
@@ -1494,6 +1674,9 @@ select {
   font-weight: 700;
   line-height: 1.35;
   margin-bottom: 0.75rem;
+  min-height: 3.25rem;
+  display: flex;
+  align-items: center;
 }
 
 .blog-title a {
@@ -2116,3 +2299,172 @@ select {
   background-color: var(--accent-gold);
   transform: translateY(-4px);
 }
+
+/* --------------------------------------------------------------------------
+   19. LEGAL, POLICY & COMPLIANCE PAGES
+   -------------------------------------------------------------------------- */
+.legal-toc-card {
+  position: sticky;
+  top: 90px;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.legal-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.legal-nav-item {
+  margin-bottom: 0.35rem;
+}
+
+.legal-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius-sm);
+  color: var(--secondary-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition-fast);
+  text-decoration: none;
+}
+
+.legal-nav-link:hover {
+  color: var(--primary);
+  background-color: var(--light-blue);
+  transform: translateX(3px);
+}
+
+.legal-nav-link.active {
+  color: var(--primary);
+  background-color: var(--light-blue);
+  font-weight: 700;
+}
+
+.legal-section {
+  scroll-margin-top: 100px;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.legal-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.legal-section h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--main-text);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.legal-section h3 i {
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+
+.legal-section p {
+  color: var(--secondary-text);
+  line-height: 1.7;
+  font-size: 0.96rem;
+  margin-bottom: 1rem;
+}
+
+.legal-section ul {
+  color: var(--secondary-text);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+}
+
+.legal-section ul li {
+  margin-bottom: 0.4rem;
+}
+
+.legal-callout-box {
+  background-color: var(--light-blue);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.legal-callout-box i {
+  color: var(--primary);
+  font-size: 1.25rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.legal-callout-box p {
+  margin-bottom: 0;
+  color: var(--main-text);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.security-badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.security-badge-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  text-align: center;
+  transition: var(--transition-normal);
+}
+
+.security-badge-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.security-badge-card .sec-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--light-blue);
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.security-badge-card h5 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.security-badge-card p {
+  font-size: 0.82rem;
+  color: var(--secondary-text);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
