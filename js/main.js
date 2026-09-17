@@ -276,7 +276,7 @@ const PROPVANTAGE_SERVICES = {
         desc: 'Every lease addendum, inspection sheet, and tenant notice is permanently stored in your encrypted owner portal.'
       },
       {
-        icon: 'fa-solid fa-shield-check text-primary-custom',
+        icon: 'fa-solid fa-file-shield text-primary-custom',
         title: 'Statutory Disclosures Included',
         desc: 'Automatic inclusion of mandated lead-based paint disclosures, bedbug history, mold guides, and local occupancy regulations.',
         highlight: true
@@ -984,10 +984,14 @@ function initDirection() {
 }
 
 function applyDirection(dir) {
-  document.documentElement.setAttribute('dir', dir);
+  const finalDir = dir === 'rtl' ? 'rtl' : 'ltr';
+  document.documentElement.setAttribute('dir', finalDir);
+  if (document.body) {
+    document.body.setAttribute('dir', finalDir);
+  }
   const rtlBadges = document.querySelectorAll('.rtl-toggle-btn .rtl-label');
   rtlBadges.forEach(badge => {
-    badge.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+    badge.textContent = finalDir === 'rtl' ? 'LTR' : 'RTL';
   });
 }
 
@@ -1133,6 +1137,196 @@ function initBlogFilterAndSearch() {
   }
 }
 
+/* ==========================================================================
+   GLOBAL FORM VALIDATION UTILITIES & HELPERS
+   ========================================================================== */
+
+/**
+ * Name validator:
+ * - Accepts alphabetic characters (A-Z, a-z) and spaces
+ * - Minimum character requirement: at least 2 characters (rejects single letters like 'A' or 'B')
+ * - Maximum length: 50 characters
+ * - Rejects numbers, special characters, single letters, and empty strings
+ */
+const NAME_REGEX = /^[a-zA-Z]+(?:\s+[a-zA-Z]+)*$/;
+
+function isValidName(name) {
+  if (!name || typeof name !== 'string') return false;
+  const trimmed = name.trim();
+  if (trimmed.length < 2 || trimmed.length > 50) return false;
+  return NAME_REGEX.test(trimmed);
+}
+
+/**
+ * Restricts an input to accept only alphabetic characters (A-Z, a-z) and spaces in real-time.
+ * Automatically filters out numbers, symbols, and invalid characters on keydown and input.
+ */
+function restrictNameInputToLetters(input) {
+  if (!input) return;
+
+  // Prevent entering non-alphabetic / non-space characters on keydown
+  input.addEventListener('keydown', (e) => {
+    if (
+      ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Enter', 'Home', 'End'].includes(e.key) ||
+      (e.ctrlKey || e.metaKey)
+    ) {
+      return;
+    }
+    // Allow alphabets (a-z, A-Z) and spaces only
+    if (!/^[a-zA-Z\s]$/.test(e.key)) {
+      e.preventDefault();
+    }
+  });
+
+  // Sanitize on input in case user pastes or drags invalid characters
+  input.addEventListener('input', () => {
+    const originalVal = input.value;
+    const sanitizedVal = originalVal.replace(/[^a-zA-Z\s]/g, '');
+    if (originalVal !== sanitizedVal) {
+      input.value = sanitizedVal;
+    }
+  });
+}
+
+/**
+ * Password validation rules:
+ * - Minimum 8 characters
+ * - At least one uppercase letter (A-Z)
+ * - At least one lowercase letter (a-z)
+ * - At least one number (0-9)
+ * - At least one special character (!@#$%^&*()_+-=[]{};':"|,.<>/?~`)
+ */
+function getPasswordCriteria(password) {
+  const pwd = password || '';
+  return {
+    length: pwd.length >= 8,
+    uppercase: /[A-Z]/.test(pwd),
+    lowercase: /[a-z]/.test(pwd),
+    number: /[0-9]/.test(pwd),
+    special: /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]/.test(pwd)
+  };
+}
+
+function isValidPassword(password) {
+  if (!password || typeof password !== 'string') return false;
+  const c = getPasswordCriteria(password);
+  return c.length && c.uppercase && c.lowercase && c.number && c.special;
+}
+
+/**
+ * Updates real-time password requirement checklist UI.
+ */
+function updatePasswordCriteriaUI(password) {
+  const c = getPasswordCriteria(password);
+  const critLength = document.getElementById('critLength');
+  const critUpper = document.getElementById('critUpper');
+  const critLower = document.getElementById('critLower');
+  const critNumber = document.getElementById('critNumber');
+  const critSpecial = document.getElementById('critSpecial');
+  const badge = document.getElementById('pwdStrengthBadge');
+
+  const updateItem = (elem, isMet, label) => {
+    if (!elem) return;
+    if (isMet) {
+      elem.className = 'col-sm-6 d-flex align-items-center text-success fw-semibold';
+      elem.innerHTML = `<i class="fa-solid fa-circle-check text-success me-2"></i> <span>${label}</span>`;
+    } else {
+      elem.className = 'col-sm-6 d-flex align-items-center text-secondary-custom';
+      elem.innerHTML = `<i class="fa-regular fa-circle text-muted me-2"></i> <span>${label}</span>`;
+    }
+  };
+
+  updateItem(critLength, c.length, 'Minimum 8 characters');
+  updateItem(critUpper, c.uppercase, 'Uppercase letter (A-Z)');
+  updateItem(critLower, c.lowercase, 'Lowercase letter (a-z)');
+  updateItem(critNumber, c.number, 'At least one number (0-9)');
+
+  if (critSpecial) {
+    if (c.special) {
+      critSpecial.className = 'col-sm-12 d-flex align-items-center text-success fw-semibold';
+      critSpecial.innerHTML = '<i class="fa-solid fa-circle-check text-success me-2"></i> <span>Special character (!@#$%^&*...)</span>';
+    } else {
+      critSpecial.className = 'col-sm-12 d-flex align-items-center text-secondary-custom';
+      critSpecial.innerHTML = '<i class="fa-regular fa-circle text-muted me-2"></i> <span>Special character (!@#$%^&*...)</span>';
+    }
+  }
+
+  if (badge) {
+    const metCount = Object.values(c).filter(Boolean).length;
+    if (!password) {
+      badge.className = 'badge badge-status badge-secondary';
+      badge.textContent = 'Requirements';
+    } else if (metCount === 5) {
+      badge.className = 'badge badge-status badge-success';
+      badge.textContent = 'Strong Password';
+    } else if (metCount >= 3) {
+      badge.className = 'badge badge-status badge-warning';
+      badge.textContent = 'Medium';
+    } else {
+      badge.className = 'badge badge-status badge-danger';
+      badge.textContent = 'Weak';
+    }
+  }
+}
+
+/**
+ * Strict and complete email validator:
+ * - Requires username containing valid characters
+ * - Exactly one '@'
+ * - Domain name with valid characters, no consecutive dots
+ * - Proper domain extension (TLD) of at least 2 alphabetic characters (.com, .org, .co.uk, etc.)
+ */
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9]+(?:[-.][a-zA-Z0-9]+)*\.[a-zA-Z]{2,}$/;
+
+function isValidEmail(email) {
+  if (!email || typeof email !== 'string') return false;
+  return EMAIL_REGEX.test(email.trim());
+}
+
+/**
+ * Phone number validator:
+ * - Accepts numbers only (digits 0-9)
+ * - Minimum 7 digits, maximum 15 digits (standard E.164 phone length)
+ * - Rejects letters (A-Z, a-z), spaces, special characters (@, #, etc.)
+ */
+const PHONE_REGEX = /^\d{7,15}$/;
+
+function isValidPhone(phone) {
+  if (!phone || typeof phone !== 'string') return false;
+  return PHONE_REGEX.test(phone.trim());
+}
+
+/**
+ * Restricts an input to accept only numeric characters (0-9) in real-time.
+ * Automatically filters out any alphabetic or invalid characters on keydown and input.
+ */
+function restrictPhoneInputToDigits(input) {
+  if (!input) return;
+
+  // Prevent entering non-digit characters on keydown
+  input.addEventListener('keydown', (e) => {
+    if (
+      ['Backspace', 'Delete', 'Tab', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Enter', 'Home', 'End'].includes(e.key) ||
+      (e.ctrlKey || e.metaKey)
+    ) {
+      return;
+    }
+    // Block non-digit keys (including alphabets, spaces, and special symbols)
+    if (!/^\d$/.test(e.key)) {
+      e.preventDefault();
+    }
+  });
+
+  // Sanitize on input in case user pastes or drags invalid characters
+  input.addEventListener('input', () => {
+    const originalVal = input.value;
+    const sanitizedVal = originalVal.replace(/\D/g, '');
+    if (originalVal !== sanitizedVal) {
+      input.value = sanitizedVal;
+    }
+  });
+}
+
 /* --------------------------------------------------------------------------
    7. CONTACT FORM VALIDATION
    -------------------------------------------------------------------------- */
@@ -1147,12 +1341,20 @@ function initContactFormValidation() {
   const messageInput = document.getElementById('contactMessage');
   const formFeedback = document.getElementById('contactFormFeedback');
 
-  const nameRegex = /^[a-zA-Z\s]{3,50}$/;
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phoneRegex = /^[\d\s+\-()]{7,20}$/;
+  // Setup input restrictions (letters for name, digits for phone)
+  if (nameInput) {
+    restrictNameInputToLetters(nameInput);
+  }
+  if (phoneInput) {
+    restrictPhoneInputToDigits(phoneInput);
+  }
 
   const validateField = (input, isValid, errorMsg) => {
-    const errorElem = input.nextElementSibling;
+    if (!input) return false;
+    let errorElem = input.nextElementSibling;
+    if (input.parentElement && input.parentElement.classList.contains('input-icon-wrap')) {
+      errorElem = input.parentElement.querySelector('.invalid-feedback') || input.parentElement.nextElementSibling;
+    }
     if (isValid) {
       input.classList.remove('is-invalid');
       input.classList.add('is-valid');
@@ -1171,15 +1373,40 @@ function initContactFormValidation() {
   };
 
   nameInput?.addEventListener('input', () => {
-    validateField(nameInput, nameRegex.test(nameInput.value.trim()), 'Please enter a valid name (letters & spaces only, min 3 chars).');
+    const val = nameInput.value.trim();
+    if (!val) {
+      validateField(nameInput, false, 'Please enter your full name.');
+    } else if (val.length < 2) {
+      validateField(nameInput, false, 'Name must be at least 2 characters long (letters & spaces only).');
+    } else if (!isValidName(val)) {
+      validateField(nameInput, false, 'Please enter a valid full name (letters & spaces only, min 2 characters).');
+    } else {
+      validateField(nameInput, true, '');
+    }
   });
 
   emailInput?.addEventListener('input', () => {
-    validateField(emailInput, emailRegex.test(emailInput.value.trim()), 'Please enter a valid email address.');
+    const val = emailInput.value.trim();
+    if (!val) {
+      validateField(emailInput, false, 'Please enter your email address.');
+    } else if (!isValidEmail(val)) {
+      validateField(emailInput, false, 'Please enter a valid email address (e.g., user@example.com).');
+    } else {
+      validateField(emailInput, true, '');
+    }
   });
 
   phoneInput?.addEventListener('input', () => {
-    validateField(phoneInput, phoneRegex.test(phoneInput.value.trim()), 'Please enter a valid phone number (min 7 digits).');
+    const val = phoneInput.value.trim();
+    if (!val) {
+      validateField(phoneInput, false, 'Please enter your phone number.');
+    } else if (/\D/.test(val)) {
+      validateField(phoneInput, false, 'Phone number must contain numbers only.');
+    } else if (!isValidPhone(val)) {
+      validateField(phoneInput, false, 'Please enter a valid phone number (numbers only, min 7 digits).');
+    } else {
+      validateField(phoneInput, true, '');
+    }
   });
 
   messageInput?.addEventListener('input', () => {
@@ -1189,11 +1416,48 @@ function initContactFormValidation() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const isNameValid = validateField(nameInput, nameRegex.test(nameInput?.value.trim() || ''), 'Please enter a valid name (letters and spaces only).');
-    const isEmailValid = validateField(emailInput, emailRegex.test(emailInput?.value.trim() || ''), 'Please provide a valid email.');
-    const isPhoneValid = validateField(phoneInput, phoneRegex.test(phoneInput?.value.trim() || ''), 'Please enter a valid phone number.');
-    const isSubjectValid = validateField(subjectInput, subjectInput?.value.trim() !== '', 'Please select a subject.');
-    const isMessageValid = validateField(messageInput, (messageInput?.value.trim().length || 0) >= 10, 'Message must be at least 10 characters.');
+    const nameVal = nameInput?.value.trim() || '';
+    const emailVal = emailInput?.value.trim() || '';
+    const phoneVal = phoneInput?.value.trim() || '';
+    const subjectVal = subjectInput?.value.trim() || '';
+    const messageVal = messageInput?.value.trim() || '';
+
+    let nameErrorMsg = 'Please enter your full name.';
+    if (nameVal && nameVal.length < 2) {
+      nameErrorMsg = 'Name must be at least 2 characters long (single letters are not allowed).';
+    } else if (nameVal) {
+      nameErrorMsg = 'Please enter a valid full name (letters and spaces only, min 2 characters).';
+    }
+
+    const isNameValid = validateField(
+      nameInput,
+      isValidName(nameVal),
+      nameErrorMsg
+    );
+
+    const isEmailValid = validateField(
+      emailInput,
+      isValidEmail(emailVal),
+      emailVal ? 'Please enter a valid email address (e.g., user@example.com).' : 'Please enter your email address.'
+    );
+
+    const isPhoneValid = validateField(
+      phoneInput,
+      isValidPhone(phoneVal),
+      phoneVal ? 'Please enter a valid phone number (numbers only, min 7 digits).' : 'Please enter your phone number.'
+    );
+
+    const isSubjectValid = validateField(
+      subjectInput,
+      subjectVal !== '',
+      'Please select an inquiry topic.'
+    );
+
+    const isMessageValid = validateField(
+      messageInput,
+      messageVal.length >= 10,
+      'Message must be at least 10 characters long.'
+    );
 
     if (isNameValid && isEmailValid && isPhoneValid && isSubjectValid && isMessageValid) {
       if (formFeedback) {
@@ -1210,13 +1474,25 @@ function initContactFormValidation() {
       form.querySelectorAll('.is-valid').forEach(el => el.classList.remove('is-valid'));
     } else {
       if (formFeedback) {
+        let firstError = 'Please correct the errors in the form fields before submitting.';
+        if (!isNameValid && nameVal && nameVal.length < 2) {
+          firstError = 'Name must be at least 2 characters long (single letters are not allowed).';
+        } else if (!isNameValid && nameVal) {
+          firstError = 'Please enter a valid full name (letters and spaces only, min 2 characters).';
+        } else if (!isEmailValid && emailVal) {
+          firstError = 'Please enter a valid email address (e.g., user@example.com).';
+        } else if (!isPhoneValid && phoneVal) {
+          firstError = 'Phone number must contain numbers only (min 7 digits).';
+        }
         formFeedback.innerHTML = `
           <div class="alert alert-danger d-flex align-items-center gap-2 fade-in-up mt-3" role="alert">
             <i class="fa-solid fa-circle-exclamation fs-5"></i>
-            <div>Please correct the errors in the form fields before submitting.</div>
+            <div>${firstError}</div>
           </div>
         `;
       }
+      const firstInvalid = form.querySelector('.is-invalid');
+      if (firstInvalid) firstInvalid.focus();
     }
   });
 }
@@ -1248,13 +1524,13 @@ function initPasswordToggles() {
 function initAuthValidation() {
   // Default authorized accounts
   const DEFAULT_USERS = [
+    { email: 'owner@propvantage.com', password: 'DemoPassword123!', name: 'Property Owner' },
     { email: 'owner@propvantage.com', password: 'DemoPassword123', name: 'Property Owner' },
+    { email: 'admin@propvantage.com', password: 'DemoPassword123!', name: 'Administrator' },
     { email: 'admin@propvantage.com', password: 'DemoPassword123', name: 'Administrator' },
-    { email: 'admin@propvantage.com', password: 'admin123', name: 'Administrator' },
-    { email: 'admin@propvantage.com', password: 'Admin@123', name: 'Administrator' },
-    { email: 'admin', password: 'admin', name: 'Administrator' },
-    { email: 'admin', password: 'admin123', name: 'Administrator' },
-    { email: 'demo@propvantage.com', password: 'DemoPassword123', name: 'Demo User' }
+    { email: 'demo@propvantage.com', password: 'DemoPassword123!', name: 'Demo User' },
+    { email: 'demo@propvantage.com', password: 'DemoPassword123', name: 'Demo User' },
+    { email: 'tamil@propvantage.com', password: 'Tamil@123', name: 'Tamil Selvan' }
   ];
 
   // Helper to get all registered users
@@ -1266,7 +1542,7 @@ function initAuthValidation() {
     }
   }
 
-  // Login Form
+  // --- LOGIN FORM ---
   const loginForm = document.getElementById('loginForm');
   if (loginForm) {
     const emailInput = document.getElementById('loginEmail');
@@ -1317,10 +1593,37 @@ function initAuthValidation() {
       forgotBtn.addEventListener('click', (e) => {
         e.preventDefault();
         const emailVal = emailInput ? emailInput.value.trim() : '';
-        const targetEmail = emailVal || 'your registered email';
+
+        if (!emailVal) {
+          if (alertBox) {
+            alertBox.className = 'alert alert-danger fade-in-up mb-4';
+            alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-2"></i> Please enter your email address to reset your password.';
+            alertBox.style.display = 'block';
+          }
+          if (emailInput) {
+            emailInput.classList.add('is-invalid');
+            emailInput.focus();
+          }
+          return;
+        }
+
+        if (!isValidEmail(emailVal)) {
+          if (alertBox) {
+            alertBox.className = 'alert alert-danger fade-in-up mb-4';
+            alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-2"></i> Please enter a valid email address (e.g., user@example.com).';
+            alertBox.style.display = 'block';
+          }
+          if (emailInput) {
+            emailInput.classList.add('is-invalid');
+            emailInput.focus();
+          }
+          return;
+        }
+
+        if (emailInput) emailInput.classList.remove('is-invalid');
         if (alertBox) {
           alertBox.className = 'alert alert-info fade-in-up mb-4';
-          alertBox.innerHTML = `<i class="fa-solid fa-circle-info me-2"></i> Password reset instructions have been sent to <strong>${targetEmail}</strong>.`;
+          alertBox.innerHTML = `<i class="fa-solid fa-circle-info me-2"></i> Password reset instructions have been sent to <strong>${emailVal}</strong>.`;
           alertBox.style.display = 'block';
         }
       });
@@ -1363,6 +1666,22 @@ function initAuthValidation() {
         }
         if (!emailVal && emailInput) emailInput.classList.add('is-invalid');
         if (!passVal && passInput) passInput.classList.add('is-invalid');
+        if (!emailVal && emailInput) emailInput.focus();
+        else if (!passVal && passInput) passInput.focus();
+        return;
+      }
+
+      // Validate email format
+      if (!isValidEmail(emailVal)) {
+        if (alertBox) {
+          alertBox.className = 'alert alert-danger fade-in-up mb-4';
+          alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-2"></i> Please enter a valid email address (e.g., user@example.com).';
+          alertBox.style.display = 'block';
+        }
+        if (emailInput) {
+          emailInput.classList.add('is-invalid');
+          emailInput.focus();
+        }
         return;
       }
 
@@ -1411,50 +1730,143 @@ function initAuthValidation() {
     });
   }
 
-  // Register Form
+  // --- REGISTER FORM ---
   const registerForm = document.getElementById('registerForm');
   if (registerForm) {
+    const nameInput = document.getElementById('regName');
+    const emailInput = document.getElementById('regEmail');
+    const phoneInput = document.getElementById('regPhone');
+    const passInput = document.getElementById('regPassword');
+    const confirmPassInput = document.getElementById('regConfirmPassword');
+    const termsCheck = document.getElementById('regTerms');
+    const alertBox = document.getElementById('registerAlert');
+
+    if (nameInput) {
+      restrictNameInputToLetters(nameInput);
+    }
+    if (phoneInput) {
+      restrictPhoneInputToDigits(phoneInput);
+    }
+
+    if (passInput) {
+      passInput.addEventListener('input', () => {
+        updatePasswordCriteriaUI(passInput.value);
+      });
+    }
+
+    [nameInput, emailInput, phoneInput, passInput, confirmPassInput].forEach(inp => {
+      if (!inp) return;
+      inp.addEventListener('input', () => {
+        inp.classList.remove('is-invalid');
+        if (alertBox && alertBox.classList.contains('alert-danger')) {
+          alertBox.style.display = 'none';
+        }
+      });
+    });
+
     registerForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('regName');
-      const email = document.getElementById('regEmail');
-      const phone = document.getElementById('regPhone');
-      const pass = document.getElementById('regPassword');
-      const confirmPass = document.getElementById('regConfirmPassword');
-      const alertBox = document.getElementById('registerAlert');
 
-      if (!name || !email || !phone || !pass || !confirmPass) return;
+      if (!nameInput || !emailInput || !phoneInput || !passInput || !confirmPassInput) return;
 
-      const nameVal = name.value.trim();
-      const emailVal = email.value.trim();
-      const phoneVal = phone.value.trim();
-      const passVal = pass.value;
-      const confirmVal = confirmPass.value;
+      const nameVal = nameInput.value.trim();
+      const emailVal = emailInput.value.trim();
+      const phoneVal = phoneInput.value.trim();
+      const passVal = passInput.value;
+      const confirmVal = confirmPassInput.value;
 
+      // Reset previous error marks
+      [nameInput, emailInput, phoneInput, passInput, confirmPassInput].forEach(inp => inp.classList.remove('is-invalid'));
+
+      // Check required empty fields
       if (!nameVal || !emailVal || !phoneVal || !passVal || !confirmVal) {
         if (alertBox) {
           alertBox.className = 'alert alert-danger fade-in-up mb-4';
           alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-2"></i> Please fill in all required fields.';
           alertBox.style.display = 'block';
         }
+        if (!nameVal) nameInput.classList.add('is-invalid');
+        if (!emailVal) emailInput.classList.add('is-invalid');
+        if (!phoneVal) phoneInput.classList.add('is-invalid');
+        if (!passVal) passInput.classList.add('is-invalid');
+        if (!confirmVal) confirmPassInput.classList.add('is-invalid');
+
+        const firstEmpty = [nameInput, emailInput, phoneInput, passInput, confirmPassInput].find(i => i.classList.contains('is-invalid'));
+        if (firstEmpty) firstEmpty.focus();
         return;
       }
 
+      // Check Name validation (letters & spaces only, min 2 characters, no single letter)
+      if (!isValidName(nameVal)) {
+        if (alertBox) {
+          alertBox.className = 'alert alert-danger fade-in-up mb-4';
+          const nameMsg = nameVal.length < 2 
+            ? 'Name must be at least 2 characters long (single letters are not allowed).' 
+            : 'Please enter a valid full name (letters and spaces only, min 2 characters).';
+          alertBox.innerHTML = `<i class="fa-solid fa-triangle-exclamation me-2"></i> ${nameMsg}`;
+          alertBox.style.display = 'block';
+        }
+        nameInput.classList.add('is-invalid');
+        nameInput.focus();
+        return;
+      }
+
+      // Check Email validation
+      if (!isValidEmail(emailVal)) {
+        if (alertBox) {
+          alertBox.className = 'alert alert-danger fade-in-up mb-4';
+          alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-2"></i> Please enter a valid email address (e.g., user@example.com).';
+          alertBox.style.display = 'block';
+        }
+        emailInput.classList.add('is-invalid');
+        emailInput.focus();
+        return;
+      }
+
+      // Check Phone validation (numbers only, min 7 digits)
+      if (!isValidPhone(phoneVal)) {
+        if (alertBox) {
+          alertBox.className = 'alert alert-danger fade-in-up mb-4';
+          alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-2"></i> Phone number must contain numbers only (min 7 digits).';
+          alertBox.style.display = 'block';
+        }
+        phoneInput.classList.add('is-invalid');
+        phoneInput.focus();
+        return;
+      }
+
+      // Check Strong Password validation
+      if (!isValidPassword(passVal)) {
+        if (alertBox) {
+          alertBox.className = 'alert alert-danger fade-in-up mb-4';
+          alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-2"></i> Password must be at least 8 characters long and include an uppercase letter, a lowercase letter, a number, and a special character (e.g., Tamil@123).';
+          alertBox.style.display = 'block';
+        }
+        passInput.classList.add('is-invalid');
+        passInput.focus();
+        return;
+      }
+
+      // Check Password Match
       if (passVal !== confirmVal) {
         if (alertBox) {
           alertBox.className = 'alert alert-danger fade-in-up mb-4';
           alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-2"></i> Passwords do not match!';
           alertBox.style.display = 'block';
         }
+        confirmPassInput.classList.add('is-invalid');
+        confirmPassInput.focus();
         return;
       }
 
-      if (passVal.length < 6) {
+      // Check terms agreement
+      if (termsCheck && !termsCheck.checked) {
         if (alertBox) {
           alertBox.className = 'alert alert-danger fade-in-up mb-4';
-          alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-2"></i> Password must be at least 6 characters.';
+          alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-2"></i> Please accept the Terms of Service and Privacy Policy.';
           alertBox.style.display = 'block';
         }
+        termsCheck.focus();
         return;
       }
 
@@ -1467,6 +1879,8 @@ function initAuthValidation() {
           alertBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation me-2"></i> An account with this email already exists.';
           alertBox.style.display = 'block';
         }
+        emailInput.classList.add('is-invalid');
+        emailInput.focus();
         return;
       }
 
@@ -1500,6 +1914,61 @@ function initAuthValidation() {
       }, 1000);
     });
   }
+}
+
+/* --------------------------------------------------------------------------
+   NEWSLETTER & NOTIFY FORMS VALIDATION
+   -------------------------------------------------------------------------- */
+function initNewsletterForms() {
+  const forms = document.querySelectorAll('.footer-newsletter-form, form[id*="newsletter"], form[id*="notify"], form');
+  forms.forEach(form => {
+    if (form.id === 'contactForm' || form.id === 'loginForm' || form.id === 'registerForm') return;
+
+    const emailInput = form.querySelector('input[type="email"], .footer-newsletter-input');
+    if (!emailInput) return;
+
+    const group = emailInput.closest('.footer-newsletter-group') || emailInput.parentElement;
+
+    emailInput.addEventListener('input', () => {
+      emailInput.classList.remove('is-invalid');
+      if (group) group.classList.remove('is-invalid');
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailVal = emailInput.value.trim();
+
+      if (!emailVal) {
+        emailInput.classList.add('is-invalid');
+        if (group) group.classList.add('is-invalid');
+        alert('Please enter your email address.');
+        emailInput.focus();
+        return;
+      }
+
+      if (!isValidEmail(emailVal)) {
+        emailInput.classList.add('is-invalid');
+        if (group) group.classList.add('is-invalid');
+        alert('Please enter a valid email address (e.g., user@example.com).');
+        emailInput.focus();
+        return;
+      }
+
+      // Valid email
+      emailInput.classList.remove('is-invalid');
+      if (group) group.classList.remove('is-invalid');
+
+      if (window.location.pathname.includes('coming-soon')) {
+        alert('Thank you! You will be notified the moment we go live.');
+      } else if (window.location.pathname.includes('blog')) {
+        alert('Thank you for subscribing to PropVantage Insights!');
+      } else {
+        alert('Thank you for subscribing to PropVantage updates!');
+      }
+
+      form.reset();
+    });
+  });
 }
 
 /* --------------------------------------------------------------------------
@@ -1901,6 +2370,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactFormValidation();
   initPasswordToggles();
   initAuthValidation();
+  initNewsletterForms();
   initDashboardGreeting();
   initComingSoonCountdown();
   initPricingToggle();

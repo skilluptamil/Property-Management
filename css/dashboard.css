@@ -543,6 +543,43 @@
   position: relative;
 }
 
+.property-dash-card .badge-status {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.35rem !important;
+  vertical-align: middle !important;
+  line-height: 1.2 !important;
+  font-weight: 700;
+}
+
+.property-dash-card .badge-status i,
+.property-dash-card .badge-status svg,
+.property-dash-card .badge-status img {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.85em !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+}
+
+[data-theme="dark"] .property-dash-card .badge-status.badge-success {
+  background: rgba(85, 167, 122, 0.25) !important;
+  color: #6ee7b7 !important;
+  border: 1px solid rgba(85, 167, 122, 0.4);
+}
+
+[data-theme="dark"] .property-dash-card .badge-status.badge-warning {
+  background: rgba(217, 164, 65, 0.25) !important;
+  color: #fde047 !important;
+  border: 1px solid rgba(217, 164, 65, 0.4);
+}
+
 .property-dash-body {
   padding: 1.25rem;
   flex-grow: 1;
@@ -553,6 +590,21 @@
 
 .occupancy-progress-wrap {
   margin: 0.75rem 0;
+}
+
+.occupancy-progress-wrap .status-text-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  line-height: 1.2;
+}
+
+.occupancy-progress-wrap .status-text-item i {
+  font-size: 0.82em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .occupancy-progress-bar {
@@ -766,4 +818,30 @@
   font-size: 0.82rem;
   font-weight: 700;
 }
+
+/* Mobile Dashboard Responsiveness (<=575px & 360px) */
+@media (max-width: 575.98px) {
+  .dashboard-main {
+    padding: 1.25rem 0.85rem !important;
+  }
+  .propvantage-toast-container {
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    bottom: 0.75rem !important;
+  }
+  .propvantage-toast {
+    min-width: auto !important;
+    width: 100% !important;
+  }
+  .inbox-item {
+    padding: 0.85rem 0.75rem;
+  }
+  .chat-bubble-sent {
+    margin-left: 0.5rem;
+  }
+  [dir="rtl"] .chat-bubble-sent {
+    margin-right: 0.5rem;
+  }
+}
+
 

@@ -92,7 +92,7 @@
           <!-- Email Notify Form -->
           <div class="mx-auto mb-5" style="max-width: 520px;">
             <h5 class="fw-bold mb-3">Get Notified When We Launch</h5>
-            <form onsubmit="event.preventDefault(); alert('Thank you! You will be notified the moment we go live.'); this.reset();">
+            <form id="comingSoonNotifyForm" novalidate>
               <div class="input-group input-group-lg shadow-sm">
                 <input type="email" class="form-control form-control-custom" placeholder="Enter your email address..." required aria-label="Notify email address">
                 <button class="btn btn-primary-custom px-4" type="submit">Notify Me</button>

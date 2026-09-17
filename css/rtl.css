@@ -231,3 +231,18 @@
   text-align: right;
 }
 
+/* 10. Mobile Offcanvas in RTL */
+[dir="rtl"] .navbar-custom .offcanvas.offcanvas-end {
+  right: auto !important;
+  left: 0 !important;
+  transform: translateX(-100%) !important;
+  border-left: none !important;
+  border-right: 1px solid var(--border-color) !important;
+}
+
+[dir="rtl"] .navbar-custom .offcanvas.offcanvas-end.show:not(.hiding),
+[dir="rtl"] .navbar-custom .offcanvas.offcanvas-end.showing {
+  transform: none !important;
+}
+
+

@@ -83,7 +83,7 @@
                   <label for="regPhone" class="form-label-custom">Phone Number <span class="text-danger">*</span></label>
                   <div class="input-icon-wrap">
                     <i class="fa-solid fa-phone"></i>
-                    <input type="tel" class="form-control form-control-custom" id="regPhone" placeholder="+1 (555) 234-5678" required>
+                    <input type="tel" class="form-control form-control-custom" id="regPhone" placeholder="9876543210" pattern="[0-9]*" inputmode="numeric" required>
                   </div>
                 </div>
 
@@ -112,6 +112,33 @@
                     <button type="button" class="btn btn-link position-absolute top-50 end-0 translate-middle-y me-2 text-secondary-custom p-0 border-0 password-toggle-btn shadow-none" data-target="regConfirmPassword" aria-label="Toggle Password Visibility">
                       <i class="fa-regular fa-eye"></i>
                     </button>
+                  </div>
+                </div>
+
+                <!-- Real-time Password Requirements Checklist -->
+                <div class="col-12" id="passwordRequirementsWrapper">
+                  <div class="password-requirements-box p-3 rounded-3">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                      <span class="small fw-bold text-dark-custom"><i class="fa-solid fa-shield-halved text-primary-custom me-1"></i> Strong Password Requirements:</span>
+                      <span class="badge badge-status badge-secondary" id="pwdStrengthBadge" style="font-size: 0.75rem;">Requirements</span>
+                    </div>
+                    <div class="row g-2 small text-secondary-custom" id="pwdCriteriaGrid">
+                      <div class="col-sm-6 d-flex align-items-center" id="critLength">
+                        <i class="fa-regular fa-circle me-2 text-muted"></i> <span>Minimum 8 characters</span>
+                      </div>
+                      <div class="col-sm-6 d-flex align-items-center" id="critUpper">
+                        <i class="fa-regular fa-circle me-2 text-muted"></i> <span>Uppercase letter (A-Z)</span>
+                      </div>
+                      <div class="col-sm-6 d-flex align-items-center" id="critLower">
+                        <i class="fa-regular fa-circle me-2 text-muted"></i> <span>Lowercase letter (a-z)</span>
+                      </div>
+                      <div class="col-sm-6 d-flex align-items-center" id="critNumber">
+                        <i class="fa-regular fa-circle me-2 text-muted"></i> <span>At least one number (0-9)</span>
+                      </div>
+                      <div class="col-sm-12 d-flex align-items-center" id="critSpecial">
+                        <i class="fa-regular fa-circle me-2 text-muted"></i> <span>Special character (!@#$%^&*...)</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
 

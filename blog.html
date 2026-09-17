@@ -396,7 +396,7 @@
             <h2 class="display-6 fw-bold mb-3">Join 10,000+ Landlords Getting Free Market Updates</h2>
             <p class="lead mb-4">Subscribe to receive our latest real estate research, legal updates, and rent valuation tools straight to your inbox.</p>
             
-            <form onsubmit="event.preventDefault(); alert('Thank you for subscribing to PropVantage Insights!'); this.reset();">
+            <form id="blogNewsletterForm" novalidate>
               <div class="input-group input-group-lg mx-auto" style="max-width: 520px;">
                 <input type="email" class="form-control form-control-custom" placeholder="Enter your email address..." required aria-label="Subscribe to newsletter">
                 <button class="btn btn-primary-custom px-4" type="submit">Subscribe</button>
@@ -476,7 +476,7 @@
             </li>
           </ul>
 
-          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to PropVantage updates!'); this.reset();">
+          <form class="footer-newsletter-form" novalidate>
             <div class="footer-newsletter-group">
               <input type="email" class="footer-newsletter-input" placeholder="Enter your email" required aria-label="Subscribe email">
               <button class="footer-newsletter-btn" type="submit" aria-label="Subscribe"><i class="fa-solid fa-paper-plane"></i></button>

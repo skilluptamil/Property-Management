@@ -1110,14 +1110,18 @@ function renderPropertiesView(container, filterParam = 'all') {
           <div class="position-relative">
             <img src="${p.image}" alt="${p.name}" class="property-dash-img">
             <span class="badge badge-status ${p.occupancyRate===100?'badge-success':'badge-warning'} position-absolute top-0 end-0 m-3 shadow-sm">
-              ${p.occupancyRate}% Occupied
+              <i class="fa-solid ${p.occupancyRate===100?'fa-circle-check':'fa-triangle-exclamation'}"></i>
+              <span>${p.occupancyRate}% Occupied</span>
             </span>
           </div>
           <div class="property-dash-body">
             <div>
               <div class="d-flex justify-content-between align-items-start mb-1">
                 <h4 class="h5 fw-bold mb-0">${p.name}</h4>
-                <span class="badge badge-status badge-primary small">${p.type.split(' ')[0]}</span>
+                <span class="badge badge-status badge-primary small">
+                  <i class="fa-solid fa-tag"></i>
+                  <span>${p.type.split(' ')[0]}</span>
+                </span>
               </div>
               <p class="small text-secondary-custom mb-3"><i class="fa-solid fa-location-dot me-1 text-primary-custom"></i> ${p.address}, ${p.city}, ${p.state} ${p.zip}</p>
               
@@ -1144,8 +1148,8 @@ function renderPropertiesView(container, filterParam = 'all') {
 
               <div class="occupancy-progress-wrap">
                 <div class="d-flex justify-content-between small text-secondary-custom mb-1">
-                  <span>${p.occupiedUnits} Occupied</span>
-                  <span>${p.vacantUnits} Vacant</span>
+                  <span class="status-text-item"><i class="fa-solid fa-user-check text-success"></i> <span>${p.occupiedUnits} Occupied</span></span>
+                  <span class="status-text-item"><i class="fa-solid fa-door-open text-warning"></i> <span>${p.vacantUnits} Vacant</span></span>
                 </div>
                 <div class="occupancy-progress-bar">
                   <div class="occupancy-progress-fill" style="width: ${p.occupancyRate}%;"></div>
@@ -2210,8 +2214,12 @@ window.openPropertyDetailsModal = function(propertyId) {
                       <td>${u.tenant}</td>
                       <td><small class="text-secondary-custom">${u.email}</small></td>
                       <td class="fw-bold">$${u.rent.toLocaleString()}</td>
-                      <td>${u.leaseEnd}</td>
-                      <td><span class="badge badge-status ${u.status==='Occupied'?'badge-success':'badge-warning'}">${u.status}</span></td>
+                      <td>
+                        <span class="badge badge-status ${u.status==='Occupied'?'badge-success':'badge-warning'}">
+                          <i class="fa-solid ${u.status==='Occupied'?'fa-circle-check':'fa-triangle-exclamation'}"></i>
+                          <span>${u.status}</span>
+                        </span>
+                      </td>
                     </tr>
                   `).join('')}
                 </tbody>
