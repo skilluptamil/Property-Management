@@ -641,7 +641,7 @@ function renderSidebar() {
     html = `
       <div class="sidebar-brand">
         <a class="navbar-brand-logo" href="dashboard.html?role=admin#admin-overview">
-          <svg class="logo-mark flex-shrink-0" viewBox="0 0 44 44" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg class="logo-mark flex-shrink-0" viewBox="0 0 44 44" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="pvmGradDashAdmin" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#1b4d6e"/>
@@ -664,7 +664,7 @@ function renderSidebar() {
             <circle cx="22" cy="11.5" r="2.2" fill="url(#pvmGoldDashAdmin)"/>
           </svg>
           <div class="brand-text-wrap">
-            <div class="brand-text">Prop<span>Vantage</span> <span class="role-tag-badge role-tag-admin ms-1">Admin</span></div>
+            <div class="brand-text">Prop<span>Vantage</span> <span class="role-tag-badge role-tag-admin">Admin</span></div>
             <div class="brand-subtitle">PROPERTY MANAGEMENT</div>
           </div>
         </a>
@@ -755,7 +755,7 @@ function renderSidebar() {
     html = `
       <div class="sidebar-brand">
         <a class="navbar-brand-logo" href="dashboard.html#overview">
-          <svg class="logo-mark flex-shrink-0" viewBox="0 0 44 44" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg class="logo-mark flex-shrink-0" viewBox="0 0 44 44" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="pvmGradDashOwner" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" stop-color="#1b4d6e"/>
@@ -778,7 +778,7 @@ function renderSidebar() {
             <circle cx="22" cy="11.5" r="2.2" fill="url(#pvmGoldDashOwner)"/>
           </svg>
           <div class="brand-text-wrap">
-            <div class="brand-text">Prop<span>Vantage</span> <span class="role-tag-badge role-tag-owner ms-1">Owner</span></div>
+            <div class="brand-text">Prop<span>Vantage</span> <span class="role-tag-badge role-tag-owner">Owner</span></div>
             <div class="brand-subtitle">PROPERTY MANAGEMENT</div>
           </div>
         </a>

@@ -26,7 +26,7 @@
   --dash-purple-light: #F3EFFF;
   --dash-warning: #D9A441;
 
-  --dash-sidebar-width: 270px;
+  --dash-sidebar-width: 285px;
   --dash-header-height: 72px;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .sidebar-brand {
-  padding: 1.25rem 1.4rem;
+  padding: 1.15rem 1.15rem;
   border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
@@ -88,25 +88,65 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  min-height: 72px;
 }
 
 .sidebar-brand .navbar-brand-logo {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.55rem;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.sidebar-brand .logo-mark {
+  width: 34px !important;
+  height: 34px !important;
+  flex-shrink: 0;
+}
+
+.sidebar-brand .brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  min-width: 0;
+  flex-grow: 1;
+}
+
+.sidebar-brand .brand-text {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--main-text);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.sidebar-brand .brand-subtitle {
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary-text);
+  margin-top: 1px;
+  white-space: nowrap;
 }
 
 .role-tag-badge {
-  font-size: 0.68rem;
+  font-size: 0.6rem;
   font-weight: 800;
-  padding: 0.2rem 0.55rem;
+  padding: 0.12rem 0.42rem;
   border-radius: 999px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   display: inline-flex;
   align-items: center;
+  line-height: 1.2;
+  flex-shrink: 0;
 }
 
 .role-tag-owner {
