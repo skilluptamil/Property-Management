@@ -928,70 +928,180 @@ const PROPVANTAGE_BLOGS = {
 };
 
 /* --------------------------------------------------------------------------
+   0. GLOBAL TOAST NOTIFICATION UTILITY
+   -------------------------------------------------------------------------- */
+window.showToast = function(message, type = 'info') {
+  let container = document.getElementById('toastContainer');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'toastContainer';
+    const isRtl = (document.documentElement.getAttribute('dir') || 'ltr') === 'rtl';
+    container.style.cssText = `position:fixed; top:20px; ${isRtl ? 'left:20px;' : 'right:20px;'} z-index:999999; display:flex; flex-direction:column; gap:10px; max-width:380px; pointer-events:none;`;
+    document.body.appendChild(container);
+  }
+
+  const isRtl = (document.documentElement.getAttribute('dir') || 'ltr') === 'rtl';
+  if (isRtl) {
+    container.style.right = 'auto';
+    container.style.left = '20px';
+  } else {
+    container.style.left = 'auto';
+    container.style.right = '20px';
+  }
+
+  const toast = document.createElement('div');
+  const bgClass = type === 'success' ? '#55A77A' : type === 'danger' ? '#D96B6B' : type === 'warning' ? '#D9A441' : '#4F86A6';
+  const icon = type === 'success' ? 'fa-circle-check' : type === 'danger' ? 'fa-circle-exclamation' : type === 'warning' ? 'fa-triangle-exclamation' : 'fa-circle-info';
+
+  toast.style.cssText = `
+    background: ${bgClass};
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    animation: fadeInSlide 0.3s ease;
+    pointer-events: auto;
+  `;
+
+  toast.innerHTML = `
+    <i class="fa-solid ${icon} fs-5"></i>
+    <div style="flex:1;">${message}</div>
+    <button type="button" style="background:none; border:none; color:#fff; cursor:pointer; opacity:0.8; font-size:1.2rem; line-height:1;" onclick="this.parentElement.remove()">&times;</button>
+  `;
+
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(-10px)';
+    setTimeout(() => {
+      if (toast.remove) {
+        toast.remove();
+      } else if (toast.parentElement) {
+        toast.parentElement.removeChild(toast);
+      }
+    }, 300);
+  }, 3500);
+};
+
+/* --------------------------------------------------------------------------
    1. THEME SWITCHER (LIGHT / DARK)
    -------------------------------------------------------------------------- */
-function initTheme() {
+window.applyTheme = function(theme) {
+  const finalTheme = (theme === 'dark') ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', finalTheme);
+  document.documentElement.setAttribute('data-bs-theme', finalTheme);
+  if (document.body) {
+    document.body.setAttribute('data-theme', finalTheme);
+    document.body.setAttribute('data-bs-theme', finalTheme);
+  }
+  localStorage.setItem('propvantage_theme', finalTheme);
+
   const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
-  const savedTheme = localStorage.getItem('propvantage_theme') || 'light';
-
-  applyTheme(savedTheme);
-
   themeToggleBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      applyTheme(newTheme);
-      localStorage.setItem('propvantage_theme', newTheme);
-    });
-  });
-}
-
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  document.documentElement.setAttribute('data-bs-theme', theme);
-
-  const icons = document.querySelectorAll('.theme-toggle-btn i');
-  icons.forEach(icon => {
-    if (theme === 'dark') {
-      icon.className = 'fa-solid fa-sun';
-      icon.setAttribute('title', 'Switch to Light Mode');
-    } else {
-      icon.className = 'fa-solid fa-moon';
-      icon.setAttribute('title', 'Switch to Dark Mode');
+    const title = finalTheme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+    btn.setAttribute('title', title);
+    btn.setAttribute('aria-label', title);
+    const icon = btn.querySelector('i');
+    if (icon) {
+      icon.className = finalTheme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
     }
   });
+
+  window.dispatchEvent(new CustomEvent('propvantage_theme_changed', { detail: { theme: finalTheme } }));
+  return finalTheme;
+};
+
+window.toggleTheme = function() {
+  const current = document.documentElement.getAttribute('data-theme') || localStorage.getItem('propvantage_theme') || 'light';
+  const target = (current === 'dark') ? 'light' : 'dark';
+  return window.applyTheme(target);
+};
+
+function initTheme() {
+  const savedTheme = localStorage.getItem('propvantage_theme') || 'light';
+  window.applyTheme(savedTheme);
 }
 
 /* --------------------------------------------------------------------------
    2. DIRECTION SWITCHER (LTR / RTL)
    -------------------------------------------------------------------------- */
-function initDirection() {
-  const rtlToggleBtns = document.querySelectorAll('.rtl-toggle-btn');
-  const savedDir = localStorage.getItem('propvantage_dir') || 'ltr';
-
-  applyDirection(savedDir);
-
-  rtlToggleBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
-      const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
-      applyDirection(newDir);
-      localStorage.setItem('propvantage_dir', newDir);
-    });
-  });
-}
-
-function applyDirection(dir) {
-  const finalDir = dir === 'rtl' ? 'rtl' : 'ltr';
+window.applyDirection = function(dir) {
+  const finalDir = (dir === 'rtl') ? 'rtl' : 'ltr';
   document.documentElement.setAttribute('dir', finalDir);
   if (document.body) {
     document.body.setAttribute('dir', finalDir);
   }
-  const rtlBadges = document.querySelectorAll('.rtl-toggle-btn .rtl-label');
-  rtlBadges.forEach(badge => {
-    badge.textContent = finalDir === 'rtl' ? 'LTR' : 'RTL';
+  localStorage.setItem('propvantage_dir', finalDir);
+
+  const rtlToggleBtns = document.querySelectorAll('.rtl-toggle-btn');
+  rtlToggleBtns.forEach(btn => {
+    const title = finalDir === 'rtl' ? 'Switch to LTR Layout' : 'Switch to RTL Layout';
+    btn.setAttribute('title', title);
+    btn.setAttribute('aria-label', title);
+    const badge = btn.querySelector('.rtl-label');
+    if (badge) {
+      badge.textContent = finalDir === 'rtl' ? 'LTR' : 'RTL';
+    }
+  });
+
+  const toastContainer = document.getElementById('toastContainer');
+  if (toastContainer) {
+    if (finalDir === 'rtl') {
+      toastContainer.style.right = 'auto';
+      toastContainer.style.left = '20px';
+    } else {
+      toastContainer.style.left = 'auto';
+      toastContainer.style.right = '20px';
+    }
+  }
+
+  window.dispatchEvent(new CustomEvent('propvantage_dir_changed', { detail: { dir: finalDir } }));
+  return finalDir;
+};
+
+window.toggleDirection = function() {
+  const current = document.documentElement.getAttribute('dir') || localStorage.getItem('propvantage_dir') || 'ltr';
+  const target = (current === 'rtl') ? 'ltr' : 'rtl';
+  return window.applyDirection(target);
+};
+
+function initDirection() {
+  const savedDir = localStorage.getItem('propvantage_dir') || 'ltr';
+  window.applyDirection(savedDir);
+}
+
+// Global Single Delegated Event Listener for Theme & Direction Switches
+if (!window.__propvantage_toggles_bound) {
+  window.__propvantage_toggles_bound = true;
+  document.addEventListener('click', (e) => {
+    const themeBtn = e.target.closest('.theme-toggle-btn');
+    if (themeBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const newTheme = window.toggleTheme();
+      if (typeof window.showToast === 'function') {
+        window.showToast(`Switched to ${newTheme === 'dark' ? 'Dark' : 'Light'} Mode`, 'info');
+      }
+      return;
+    }
+
+    const rtlBtn = e.target.closest('.rtl-toggle-btn');
+    if (rtlBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const newDir = window.toggleDirection();
+      if (typeof window.showToast === 'function') {
+        window.showToast(`Switched layout to ${newDir.toUpperCase()}`, 'info');
+      }
+      return;
+    }
   });
 }
 
@@ -1012,6 +1122,27 @@ function initNavbarScroll() {
 
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
+}
+
+/* --------------------------------------------------------------------------
+   3B. MOBILE OFFCANVAS MENU AUTO-CLOSE & ACCESSIBILITY HANDLERS
+   -------------------------------------------------------------------------- */
+function initMobileMenuHandling() {
+  const offcanvasEl = document.getElementById('navbarOffcanvas');
+  if (!offcanvasEl) return;
+
+  // Auto-close offcanvas when clicking nav links that navigate or jump
+  const links = offcanvasEl.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-item, .nav-actions-wrap .btn');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof bootstrap !== 'undefined' && bootstrap.Offcanvas) {
+        const instance = bootstrap.Offcanvas.getInstance(offcanvasEl);
+        if (instance) {
+          instance.hide();
+        }
+      }
+    });
+  });
 }
 
 /* --------------------------------------------------------------------------
@@ -2364,6 +2495,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initDirection();
   initNavbarScroll();
+  initMobileMenuHandling();
   initBackToTop();
   initCounters();
   initBlogFilterAndSearch();

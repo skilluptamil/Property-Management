@@ -29,14 +29,40 @@
   <nav class="navbar navbar-custom">
     <div class="container">
       <a class="navbar-brand-logo" href="index.html">
-        <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
-        <div class="brand-text">Prop<span>Vantage</span></div>
+        <svg class="logo-mark" viewBox="0 0 44 44" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="pvmGrad404" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1b4d6e"/>
+              <stop offset="100%" stop-color="#2d7fa8"/>
+            </linearGradient>
+            <linearGradient id="pvmGold404" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd56b"/>
+              <stop offset="100%" stop-color="#d49a24"/>
+            </linearGradient>
+          </defs>
+          <rect width="44" height="44" rx="11" fill="url(#pvmGrad404)"/>
+          <path d="M10 23.5L22 13L34 23.5" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13.5 22.5V33.5H30.5V22.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+          <rect x="18" y="19" width="13" height="14.5" rx="1.5" fill="#ffffff" fill-opacity="0.22" stroke="#ffffff" stroke-width="1.6"/>
+          <rect x="20.5" y="22" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+          <rect x="25.5" y="22" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+          <rect x="20.5" y="27" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+          <rect x="25.5" y="27" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+          <path d="M16 28.5H18.5V33.5H16V28.5Z" fill="url(#pvmGold404)"/>
+          <circle cx="22" cy="11.5" r="2.2" fill="url(#pvmGold404)"/>
+        </svg>
+        <div class="brand-text-wrap">
+          <div class="brand-text">Prop<span>Vantage</span></div>
+          <div class="brand-subtitle">PROPERTY MANAGEMENT</div>
+        </div>
       </a>
       <div class="nav-actions-wrap">
         <div class="nav-util-row d-flex align-items-center gap-2">
           <button class="nav-util-btn rtl-toggle-btn" title="Toggle RTL / LTR layout" aria-label="Toggle RTL layout"><span class="rtl-label small">RTL</span></button>
           <button class="nav-util-btn theme-toggle-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
         </div>
+        <a href="dashboard.html" class="btn btn-outline-custom"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="index.html" class="btn btn-outline-custom"><i class="fa-solid fa-house me-1"></i> Home</a>
       </div>
     </div>
   </nav>

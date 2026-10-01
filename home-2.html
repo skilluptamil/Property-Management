@@ -36,9 +36,33 @@
       <!-- Brand Logo -->
       <a class="navbar-brand-logo" href="index.html">
         <div class="logo-icon">
-          <i class="fa-solid fa-microchip"></i>
+          <svg viewBox="0 0 38 38" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="38" height="38" rx="9.5" fill="url(#pvmGradH2Head)" />
+            <rect x="0.75" y="0.75" width="36.5" height="36.5" rx="8.75" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" />
+            <path d="M19 28.5V9.5L26 6.5L31 8.5V28.5H19Z" fill="#8BB8CE" />
+            <rect x="21.5" y="11" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+            <rect x="26" y="11" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+            <rect x="21.5" y="15" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+            <rect x="26" y="15" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+            <path d="M7 28.5V18L14 12.5L21 18V28.5H7Z" fill="#FFFFFF" />
+            <path d="M12 28.5V22.5C12 21.4 12.9 20.5 14 20.5C15.1 20.5 16 21.4 16 22.5V28.5H12Z" fill="#182A38" />
+            <circle cx="14" cy="16.5" r="1.5" fill="#4F86A6" />
+            <rect x="5.5" y="28.5" width="27" height="2" rx="1" fill="#EAF4F8" />
+            <path d="M26.5 2.5L27.5 4.8L29.8 5.8L27.5 6.8L26.5 9.1L25.5 6.8L23.2 5.8L25.5 4.8Z" fill="#F59E0B" />
+            <circle cx="26.5" cy="5.8" r="0.7" fill="#FFF9E6" />
+            <defs>
+              <linearGradient id="pvmGradH2Head" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#3D7291" />
+                <stop offset="0.5" stop-color="#244458" />
+                <stop offset="1" stop-color="#14232E" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
-        <div class="brand-text">Prop<span>Vantage</span> <span class="badge badge-status badge-primary ms-1 fs-6">Tech</span></div>
+        <div class="brand-text-wrap">
+          <div class="brand-text">Prop<span>Vantage</span></div>
+          <div class="brand-subtitle">PROPERTY MANAGEMENT</div>
+        </div>
       </a>
 
       <!-- Mobile Toggle -->
@@ -50,8 +74,34 @@
       <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="navbarOffcanvasLabel">
         <div class="offcanvas-header border-bottom">
           <div class="navbar-brand-logo" id="navbarOffcanvasLabel">
-            <div class="logo-icon"><i class="fa-solid fa-microchip"></i></div>
-            <div class="brand-text">Prop<span>Vantage</span></div>
+            <div class="logo-icon">
+              <svg viewBox="0 0 38 38" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="38" height="38" rx="9.5" fill="url(#pvmGradH2Off)" />
+                <rect x="0.75" y="0.75" width="36.5" height="36.5" rx="8.75" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" />
+                <path d="M19 28.5V9.5L26 6.5L31 8.5V28.5H19Z" fill="#8BB8CE" />
+                <rect x="21.5" y="11" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+                <rect x="26" y="11" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+                <rect x="21.5" y="15" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+                <rect x="26" y="15" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+                <path d="M7 28.5V18L14 12.5L21 18V28.5H7Z" fill="#FFFFFF" />
+                <path d="M12 28.5V22.5C12 21.4 12.9 20.5 14 20.5C15.1 20.5 16 21.4 16 22.5V28.5H12Z" fill="#182A38" />
+                <circle cx="14" cy="16.5" r="1.5" fill="#4F86A6" />
+                <rect x="5.5" y="28.5" width="27" height="2" rx="1" fill="#EAF4F8" />
+                <path d="M26.5 2.5L27.5 4.8L29.8 5.8L27.5 6.8L26.5 9.1L25.5 6.8L23.2 5.8L25.5 4.8Z" fill="#F59E0B" />
+                <circle cx="26.5" cy="5.8" r="0.7" fill="#FFF9E6" />
+                <defs>
+                  <linearGradient id="pvmGradH2Off" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3D7291" />
+                    <stop offset="0.5" stop-color="#244458" />
+                    <stop offset="1" stop-color="#14232E" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="brand-text-wrap">
+              <div class="brand-text">Prop<span>Vantage</span></div>
+              <div class="brand-subtitle">PROPERTY MANAGEMENT</div>
+            </div>
           </div>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -102,12 +152,18 @@
               </button>
             </div>
 
+            <!-- Dashboard Button -->
+            <a href="dashboard.html" class="btn btn-outline-custom">
+              <i class="fa-solid fa-chart-pie"></i> Dashboard
+            </a>
+
             <a href="login.html" class="btn btn-outline-custom">
               <i class="fa-regular fa-user"></i> Login
             </a>
 
-            <a href="register.html" class="btn btn-primary-custom">
-              Sign Up <i class="fa-solid fa-arrow-right"></i>
+            <!-- Primary CTA -->
+            <a href="contact.html" class="btn btn-primary-custom">
+              Primary CTA <i class="fa-solid fa-arrow-right"></i>
             </a>
           </div>
         </div>
@@ -652,8 +708,34 @@
         <!-- Col 1 -->
         <div class="col-lg-4 col-md-6">
           <a class="navbar-brand-logo mb-3" href="index.html">
-            <div class="logo-icon"><i class="fa-solid fa-microchip"></i></div>
-            <div class="brand-text">Prop<span>Vantage</span></div>
+            <div class="logo-icon">
+              <svg viewBox="0 0 38 38" width="38" height="38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="38" height="38" rx="9.5" fill="url(#pvmGradH2Foot)" />
+                <rect x="0.75" y="0.75" width="36.5" height="36.5" rx="8.75" stroke="rgba(255,255,255,0.18)" stroke-width="1.5" />
+                <path d="M19 28.5V9.5L26 6.5L31 8.5V28.5H19Z" fill="#8BB8CE" />
+                <rect x="21.5" y="11" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+                <rect x="26" y="11" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+                <rect x="21.5" y="15" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+                <rect x="26" y="15" width="2.5" height="2.2" rx="0.5" fill="#182A38" />
+                <path d="M7 28.5V18L14 12.5L21 18V28.5H7Z" fill="#FFFFFF" />
+                <path d="M12 28.5V22.5C12 21.4 12.9 20.5 14 20.5C15.1 20.5 16 21.4 16 22.5V28.5H12Z" fill="#182A38" />
+                <circle cx="14" cy="16.5" r="1.5" fill="#4F86A6" />
+                <rect x="5.5" y="28.5" width="27" height="2" rx="1" fill="#EAF4F8" />
+                <path d="M26.5 2.5L27.5 4.8L29.8 5.8L27.5 6.8L26.5 9.1L25.5 6.8L23.2 5.8L25.5 4.8Z" fill="#F59E0B" />
+                <circle cx="26.5" cy="5.8" r="0.7" fill="#FFF9E6" />
+                <defs>
+                  <linearGradient id="pvmGradH2Foot" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#3D7291" />
+                    <stop offset="0.5" stop-color="#244458" />
+                    <stop offset="1" stop-color="#14232E" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div class="brand-text-wrap">
+              <div class="brand-text">Prop<span>Vantage</span></div>
+              <span class="brand-subtitle">Property Management</span>
+            </div>
           </a>
           <p class="mb-4">
             Next-generation property management platform delivering seamless rent collection, verified tenant placement, and transparent owner analytics.

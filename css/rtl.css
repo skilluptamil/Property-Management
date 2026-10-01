@@ -30,8 +30,16 @@
   padding-right: 1.25rem;
 }
 
-[dir="rtl"] .nav-actions-wrap {
-  flex-direction: row;
+@media (min-width: 992px) {
+  [dir="rtl"] .nav-actions-wrap {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 991.98px) {
+  [dir="rtl"] .nav-actions-wrap {
+    flex-direction: column;
+  }
 }
 
 /* 3. Directional Icon Flipping Only (Arrows & Chevrons) */

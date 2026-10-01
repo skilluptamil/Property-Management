@@ -1,27 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <linearGradient id="propGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4F86A6" />
-      <stop offset="100%" stop-color="#263746" />
-    </linearGradient>
-    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F8F1DF" />
-      <stop offset="100%" stop-color="#D6A84F" />
+    <linearGradient id="pvmFavGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D7291" />
+      <stop offset="50%" stop-color="#244458" />
+      <stop offset="100%" stop-color="#14232E" />
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="url(#propGrad)"/>
-  <!-- Modern Building Silhouettes -->
-  <path d="M14 48V26L28 16V48H14Z" fill="#FFFFFF" fill-opacity="0.95"/>
-  <path d="M30 48V20L44 10V48H30Z" fill="#EAF4F8" fill-opacity="0.9"/>
-  <path d="M46 48V28L52 24V48H46Z" fill="#78AFC8" fill-opacity="0.85"/>
-  <!-- Windows -->
-  <rect x="18" y="24" width="4" height="4" rx="1" fill="#4F86A6"/>
-  <rect x="18" y="32" width="4" height="4" rx="1" fill="#4F86A6"/>
-  <rect x="18" y="40" width="4" height="4" rx="1" fill="#4F86A6"/>
-  <rect x="34" y="22" width="5" height="5" rx="1" fill="#263746"/>
-  <rect x="34" y="31" width="5" height="5" rx="1" fill="#263746"/>
-  <rect x="34" y="40" width="5" height="5" rx="1" fill="#263746"/>
-  <!-- Gold Key / Accent Badge -->
-  <circle cx="48" cy="18" r="5" fill="url(#goldGrad)"/>
-  <path d="M48 16V20M46 18H50" stroke="#263746" stroke-width="1.5" stroke-linecap="round"/>
+  <rect width="64" height="64" rx="16" fill="url(#pvmFavGrad)" />
+  <rect x="1" y="1" width="62" height="62" rx="15" stroke="rgba(255,255,255,0.18)" stroke-width="2" />
+  
+  <!-- High-Rise Tower (Commercial/Multi-Family Portfolio) -->
+  <path d="M32 48V16L44 11L51 14V48H32Z" fill="#8BB8CE" />
+  <rect x="36" y="18" width="4" height="4" rx="1" fill="#182A38" />
+  <rect x="43" y="18" width="4" height="4" rx="1" fill="#182A38" />
+  <rect x="36" y="26" width="4" height="4" rx="1" fill="#182A38" />
+  <rect x="43" y="26" width="4" height="4" rx="1" fill="#182A38" />
+  
+  <!-- Residential Home & Rental Living -->
+  <path d="M12 48V30L23 21L34 30V48H12Z" fill="#FFFFFF" />
+  <path d="M20 48V37C20 35.3 21.3 34 23 34C24.7 34 26 35.3 26 37V48H20Z" fill="#182A38" />
+  <circle cx="23" cy="27" r="2.5" fill="#4F86A6" />
+  
+  <!-- Foundation Horizon Line -->
+  <rect x="9" y="48" width="46" height="3.5" rx="1.75" fill="#EAF4F8" />
+  
+  <!-- Golden Prime Star Crest -->
+  <path d="M44 4.5L45.8 8.4L49.7 10.2L45.8 12L44 15.9L42.2 12L38.3 10.2L42.2 8.4Z" fill="#F59E0B" />
+  <circle cx="44" cy="10.2" r="1.3" fill="#FFF9E6" />
 </svg>

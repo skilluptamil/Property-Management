@@ -24,20 +24,48 @@
   <!-- Custom Stylesheets -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body class="bg-main d-flex flex-column min-vh-100">
 
+  <!-- Navbar -->
   <nav class="navbar navbar-custom">
     <div class="container">
       <a class="navbar-brand-logo" href="index.html">
-        <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
-        <div class="brand-text">Prop<span>Vantage</span></div>
+        <svg class="logo-mark" viewBox="0 0 44 44" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="pvmGradRegNav" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1b4d6e"/>
+              <stop offset="100%" stop-color="#2d7fa8"/>
+            </linearGradient>
+            <linearGradient id="pvmGoldRegNav" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd56b"/>
+              <stop offset="100%" stop-color="#d49a24"/>
+            </linearGradient>
+          </defs>
+          <rect width="44" height="44" rx="11" fill="url(#pvmGradRegNav)"/>
+          <path d="M10 23.5L22 13L34 23.5" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13.5 22.5V33.5H30.5V22.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+          <rect x="18" y="19" width="13" height="14.5" rx="1.5" fill="#ffffff" fill-opacity="0.22" stroke="#ffffff" stroke-width="1.6"/>
+          <rect x="20.5" y="22" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+          <rect x="25.5" y="22" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+          <rect x="20.5" y="27" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+          <rect x="25.5" y="27" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+          <path d="M16 28.5H18.5V33.5H16V28.5Z" fill="url(#pvmGoldRegNav)"/>
+          <circle cx="22" cy="11.5" r="2.2" fill="url(#pvmGoldRegNav)"/>
+        </svg>
+        <div class="brand-text-wrap">
+          <div class="brand-text">Prop<span>Vantage</span></div>
+          <div class="brand-subtitle">PROPERTY MANAGEMENT</div>
+        </div>
       </a>
       <div class="nav-actions-wrap">
         <div class="nav-util-row d-flex align-items-center gap-2">
           <button class="nav-util-btn rtl-toggle-btn" title="Toggle RTL / LTR layout" aria-label="Toggle RTL layout"><span class="rtl-label small">RTL</span></button>
           <button class="nav-util-btn theme-toggle-btn" title="Toggle Dark / Light Theme" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
         </div>
+        <!-- Dashboard Button -->
+        <a href="dashboard.html" class="btn btn-outline-custom"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
         <a href="index.html" class="btn btn-outline-custom"><i class="fa-solid fa-arrow-left me-1"></i> Back to Home</a>
       </div>
     </div>
@@ -49,16 +77,54 @@
       <div class="row justify-content-center">
         <div class="col-md-9 col-lg-6">
           <div class="custom-card p-4 p-sm-5 shadow-xl border-primary">
+            
             <div class="text-center mb-4">
-              <div class="floating-icon mx-auto mb-3"><i class="fa-solid fa-user-plus"></i></div>
-              <h2 class="h3 fw-bold mb-1">Register Owner Account</h2>
-              <p class="text-secondary-custom small mb-0">Create your landlord profile to manage properties & track cashflow</p>
+              <a class="navbar-brand-logo justify-content-center d-inline-flex mb-2" href="index.html">
+                <svg class="logo-mark" viewBox="0 0 44 44" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="pvmGradRegCard" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#1b4d6e"/>
+                      <stop offset="100%" stop-color="#2d7fa8"/>
+                    </linearGradient>
+                    <linearGradient id="pvmGoldRegCard" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#ffd56b"/>
+                      <stop offset="100%" stop-color="#d49a24"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="44" height="44" rx="11" fill="url(#pvmGradRegCard)"/>
+                  <path d="M10 23.5L22 13L34 23.5" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M13.5 22.5V33.5H30.5V22.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+                  <rect x="18" y="19" width="13" height="14.5" rx="1.5" fill="#ffffff" fill-opacity="0.22" stroke="#ffffff" stroke-width="1.6"/>
+                  <rect x="20.5" y="22" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+                  <rect x="25.5" y="22" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+                  <rect x="20.5" y="27" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+                  <rect x="25.5" y="27" width="2.8" height="2.8" rx="0.5" fill="#ffffff"/>
+                  <path d="M16 28.5H18.5V33.5H16V28.5Z" fill="url(#pvmGoldRegCard)"/>
+                  <circle cx="22" cy="11.5" r="2.2" fill="url(#pvmGoldRegCard)"/>
+                </svg>
+                <div class="brand-text-wrap text-start">
+                  <div class="brand-text fs-4">Prop<span>Vantage</span></div>
+                  <div class="brand-subtitle">PROPERTY MANAGEMENT</div>
+                </div>
+              </a>
+              <h1 class="h4 fw-bold mb-1">Register Landlord Account</h1>
+              <p class="text-secondary-custom small mb-0">Create your owner profile to manage rental properties & cashflow</p>
             </div>
 
-            <!-- Feedback Alert -->
-            <div id="registerAlert" style="display: none;"></div>
+            <!-- Feedback Alert for Sign Up Demo -->
+            <div id="registerSuccessBox" class="alert alert-success p-3 rounded-3 mb-4" style="display: none;">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="fa-solid fa-circle-check fs-5"></i>
+                <strong>Owner Registration Successful!</strong>
+              </div>
+              <p class="small mb-2">Your landlord profile has been set up with demo estate access.</p>
+              <div class="d-flex gap-2">
+                <a href="login.html" class="btn btn-sm btn-outline-success">Go to Login</a>
+                <a href="dashboard.html" class="btn btn-sm btn-success">Enter Owner Portal</a>
+              </div>
+            </div>
 
-            <form id="registerForm" novalidate>
+            <form id="dummyRegisterForm" onsubmit="handleDummyRegister(event)">
               <div class="row g-3">
                 <!-- Full Name -->
                 <div class="col-12">
@@ -83,7 +149,7 @@
                   <label for="regPhone" class="form-label-custom">Phone Number <span class="text-danger">*</span></label>
                   <div class="input-icon-wrap">
                     <i class="fa-solid fa-phone"></i>
-                    <input type="tel" class="form-control form-control-custom" id="regPhone" placeholder="9876543210" pattern="[0-9]*" inputmode="numeric" required>
+                    <input type="tel" class="form-control form-control-custom" id="regPhone" placeholder="+1 (555) 782-9901" required>
                   </div>
                 </div>
 
@@ -95,7 +161,7 @@
                       <i class="fa-solid fa-key"></i>
                       <input type="password" class="form-control form-control-custom pe-5" id="regPassword" placeholder="••••••••" required>
                     </div>
-                    <button type="button" class="btn btn-link position-absolute top-50 end-0 translate-middle-y me-2 text-secondary-custom p-0 border-0 password-toggle-btn shadow-none" data-target="regPassword" aria-label="Toggle Password Visibility">
+                    <button type="button" class="btn btn-link position-absolute top-50 end-0 translate-middle-y me-2 text-secondary-custom p-0 border-0 password-toggle-btn shadow-none" onclick="togglePasswordVisibility('regPassword', this)">
                       <i class="fa-regular fa-eye"></i>
                     </button>
                   </div>
@@ -109,82 +175,94 @@
                       <i class="fa-solid fa-key"></i>
                       <input type="password" class="form-control form-control-custom pe-5" id="regConfirmPassword" placeholder="••••••••" required>
                     </div>
-                    <button type="button" class="btn btn-link position-absolute top-50 end-0 translate-middle-y me-2 text-secondary-custom p-0 border-0 password-toggle-btn shadow-none" data-target="regConfirmPassword" aria-label="Toggle Password Visibility">
+                    <button type="button" class="btn btn-link position-absolute top-50 end-0 translate-middle-y me-2 text-secondary-custom p-0 border-0 password-toggle-btn shadow-none" onclick="togglePasswordVisibility('regConfirmPassword', this)">
                       <i class="fa-regular fa-eye"></i>
                     </button>
                   </div>
                 </div>
 
-                <!-- Real-time Password Requirements Checklist -->
-                <div class="col-12" id="passwordRequirementsWrapper">
-                  <div class="password-requirements-box p-3 rounded-3">
-                    <div class="d-flex align-items-center justify-content-between mb-2">
-                      <span class="small fw-bold text-dark-custom"><i class="fa-solid fa-shield-halved text-primary-custom me-1"></i> Strong Password Requirements:</span>
-                      <span class="badge badge-status badge-secondary" id="pwdStrengthBadge" style="font-size: 0.75rem;">Requirements</span>
-                    </div>
-                    <div class="row g-2 small text-secondary-custom" id="pwdCriteriaGrid">
-                      <div class="col-sm-6 d-flex align-items-center" id="critLength">
-                        <i class="fa-regular fa-circle me-2 text-muted"></i> <span>Minimum 8 characters</span>
-                      </div>
-                      <div class="col-sm-6 d-flex align-items-center" id="critUpper">
-                        <i class="fa-regular fa-circle me-2 text-muted"></i> <span>Uppercase letter (A-Z)</span>
-                      </div>
-                      <div class="col-sm-6 d-flex align-items-center" id="critLower">
-                        <i class="fa-regular fa-circle me-2 text-muted"></i> <span>Lowercase letter (a-z)</span>
-                      </div>
-                      <div class="col-sm-6 d-flex align-items-center" id="critNumber">
-                        <i class="fa-regular fa-circle me-2 text-muted"></i> <span>At least one number (0-9)</span>
-                      </div>
-                      <div class="col-sm-12 d-flex align-items-center" id="critSpecial">
-                        <i class="fa-regular fa-circle me-2 text-muted"></i> <span>Special character (!@#$%^&*...)</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Terms checkbox -->
-                <div class="col-12">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="regTerms" required checked>
-                    <label class="form-check-label small text-secondary-custom" for="regTerms">
-                      I agree to the <a href="terms-of-service.html" class="text-primary-custom" target="_blank">Terms of Service</a> and <a href="privacy-policy.html" class="text-primary-custom" target="_blank">Privacy Policy</a>
-                    </label>
+                <!-- Validation message -->
+                <div class="col-12" id="passwordErrorBox" style="display: none;">
+                  <div class="alert alert-danger p-2 small mb-0">
+                    <i class="fa-solid fa-triangle-exclamation me-1"></i> Passwords do not match. Please verify both fields.
                   </div>
                 </div>
 
                 <!-- Submit Button -->
                 <div class="col-12 mt-4">
-                  <button type="submit" class="btn btn-primary-custom btn-lg w-100">
+                  <button type="submit" class="btn btn-primary-custom btn-lg w-100 shadow-primary" id="signUpSubmitBtn">
                     Create Owner Account <i class="fa-solid fa-arrow-right ms-2"></i>
                   </button>
                 </div>
               </div>
             </form>
 
-            <div class="text-center pt-3 mt-4 border-top border-light-custom">
+            <div class="text-center pt-3 mt-3 border-top border-light-custom">
               <span class="small text-secondary-custom">Already have an account?</span>
-              <a href="login.html" class="small fw-bold text-primary-custom ms-1">Sign In</a>
+              <a href="login.html" class="small fw-bold text-primary-custom text-decoration-none ms-1">Log In</a>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer class="py-3 bg-section border-top border-light-custom text-center small text-secondary-custom">
-    <div class="container d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center gap-2">
-      <div>&copy; 2026 PropVantage. All rights reserved. Secure 256-Bit Encrypted Portal.</div>
-      <div class="d-flex gap-2">
-        <a href="privacy-policy.html" class="text-secondary-custom">Privacy</a>
-        <span>•</span>
-        <a href="terms-of-service.html" class="text-secondary-custom">Terms</a>
-        <span>•</span>
-        <a href="security-compliance.html" class="text-secondary-custom">Security</a>
-      </div>
+    <div class="container">
+      &copy; 2026 PropVantage Property Management Platform.
     </div>
   </footer>
 
+  <!-- Bootstrap 5.3.3 Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Global Core Script -->
   <script src="js/main.js"></script>
+
+  <script>
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      const icon = btn.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'fa-regular fa-eye-slash';
+      } else {
+        input.type = 'password';
+        icon.className = 'fa-regular fa-eye';
+      }
+    }
+
+    function handleDummyRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById('regName').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      const phone = document.getElementById('regPhone').value.trim();
+      const password = document.getElementById('regPassword').value;
+      const confirmPassword = document.getElementById('regConfirmPassword').value;
+      const errorBox = document.getElementById('passwordErrorBox');
+      const successBox = document.getElementById('registerSuccessBox');
+
+      if (password !== confirmPassword) {
+        errorBox.style.display = 'block';
+        return;
+      }
+      errorBox.style.display = 'none';
+
+      try {
+        const stored = localStorage.getItem('propvantage_db');
+        if (stored) {
+          const db = JSON.parse(stored);
+          db.currentOwner.name = name;
+          db.currentOwner.email = email;
+          db.currentOwner.phone = phone;
+          localStorage.setItem('propvantage_db', JSON.stringify(db));
+        }
+      } catch (err) {}
+
+      document.getElementById('dummyRegisterForm').style.display = 'none';
+      successBox.style.display = 'block';
+    }
+  </script>
 </body>
 </html>
