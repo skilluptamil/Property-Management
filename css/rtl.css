@@ -124,6 +124,28 @@
   left: -20px;
 }
 
+@media (max-width: 991.98px) {
+  [dir="rtl"] .floating-stat-card.bottom-left {
+    right: 15px !important;
+    left: auto !important;
+  }
+  [dir="rtl"] .floating-stat-card.top-right {
+    left: 15px !important;
+    right: auto !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  [dir="rtl"] .floating-stat-card.bottom-left {
+    right: 10px !important;
+    left: auto !important;
+  }
+  [dir="rtl"] .floating-stat-card.top-right {
+    left: 10px !important;
+    right: auto !important;
+  }
+}
+
 [dir="rtl"] .property-badge-tag {
   left: auto;
   right: 12px;

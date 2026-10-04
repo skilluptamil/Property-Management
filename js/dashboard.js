@@ -640,7 +640,7 @@ function renderSidebar() {
   if (currentActiveRole === 'admin') {
     html = `
       <div class="sidebar-brand">
-        <a class="navbar-brand-logo" href="dashboard.html?role=admin#admin-overview">
+        <a class="navbar-brand-logo" href="index.html" title="PropVantage Property Management - Return to Home">
           <svg class="logo-mark flex-shrink-0" viewBox="0 0 44 44" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="pvmGradDashAdmin" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -754,7 +754,7 @@ function renderSidebar() {
     // Owner Portal Sidebar
     html = `
       <div class="sidebar-brand">
-        <a class="navbar-brand-logo" href="dashboard.html#overview">
+        <a class="navbar-brand-logo" href="index.html" title="PropVantage Property Management - Return to Home">
           <svg class="logo-mark flex-shrink-0" viewBox="0 0 44 44" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs>
               <linearGradient id="pvmGradDashOwner" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -869,6 +869,16 @@ function renderSidebar() {
       document.querySelector('.sidebar-backdrop')?.classList.remove('show');
     };
   }
+
+  // Auto-close sidebar on mobile when a nav item is clicked
+  sidebar.querySelectorAll('.sidebar-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth < 992) {
+        sidebar.classList.remove('sidebar-open');
+        document.querySelector('.sidebar-backdrop')?.classList.remove('show');
+      }
+    });
+  });
 }
 
 /* ==========================================================================
@@ -956,7 +966,7 @@ function updateTopbarRoleSwitcher() {
   if (!btn) {
     btn = document.createElement('button');
     btn.id = 'topbarRoleSwitchBtn';
-    btn.className = 'role-switch-btn me-2';
+    btn.className = 'role-switch-btn';
     topbar.querySelector('.topbar-actions')?.prepend(btn);
   }
 
